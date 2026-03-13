@@ -1,8 +1,20 @@
 import { NAV, AC, bd, t2, t4 } from '../constants'
 
-export default function Sidebar({ active, setActive }) {
+export default function Sidebar({ active, setActive, sidebarOpen, setSidebarOpen }) {
   return (
-    <aside
+    <>
+      {sidebarOpen && (
+        <div
+          className="sidebar-overlay"
+          onClick={() => setSidebarOpen(false)}
+          onKeyDown={(e) => e.key === 'Escape' && setSidebarOpen(false)}
+          role="button"
+          tabIndex={0}
+          aria-label="Close menu"
+        />
+      )}
+      <aside
+        className={`dashboard-sidebar ${sidebarOpen ? 'sidebar-open' : ''}`}
       style={{
         width: 56,
         flexShrink: 0,
@@ -80,7 +92,7 @@ export default function Sidebar({ active, setActive }) {
             <div
               key={item.id}
               title={item.id}
-              onClick={() => setActive(item.id)}
+              onClick={() => { setActive(item.id); setSidebarOpen?.(false) }}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => e.key === 'Enter' && setActive(item.id)}
@@ -201,5 +213,6 @@ export default function Sidebar({ active, setActive }) {
         </div>
       </div>
     </aside>
+    </>
   )
 }

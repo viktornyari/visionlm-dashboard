@@ -10,6 +10,7 @@ import InsightsPanel from './components/InsightsPanel'
 export default function App() {
   const [active, setActive] = useState('Dashboard')
   const [dateOff, setDateOff] = useState(0)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
     <div
@@ -71,48 +72,21 @@ export default function App() {
         />
       </div>
 
-      <Sidebar active={active} setActive={setActive} />
+      <Sidebar active={active} setActive={setActive} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-      <div
-        style={{
-          marginLeft: 56,
-          flex: 1,
-          display: 'flex',
-          flexDirection: 'column',
-          overflow: 'hidden',
-          position: 'relative',
-          zIndex: 1,
-          minWidth: 0,
-        }}
-      >
-        <TopBar dateOff={dateOff} setDateOff={setDateOff} />
-        <div
-          style={{
-            flex: 1,
-            overflowY: 'auto',
-            padding: '12px 16px 24px',
-            scrollbarWidth: 'thin',
-            scrollbarColor: 'rgba(255,255,255,0.07) transparent',
-          }}
-        >
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '300px 1fr 256px',
-              gap: 12,
-              alignItems: 'start',
-              minWidth: 0,
-            }}
-          >
-            <div className="fu" style={{ animationDelay: '0.06s', display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <div className="dashboard-main">
+        <TopBar dateOff={dateOff} setDateOff={setDateOff} onMenuClick={() => setSidebarOpen((o) => !o)} />
+        <div className="dashboard-scroll">
+          <div className="dashboard-grid">
+            <div className="dashboard-col-left fu" style={{ animationDelay: '0.06s', display: 'flex', flexDirection: 'column', gap: 10 }}>
               <OverviewCard />
               <WorkersCard />
             </div>
-            <div className="fu" style={{ animationDelay: '0.12s', display: 'flex', flexDirection: 'column', gap: 10, minWidth: 0 }}>
+            <div className="dashboard-col-middle fu" style={{ animationDelay: '0.12s', display: 'flex', flexDirection: 'column', gap: 10, minWidth: 0 }}>
               <SavingsCard />
               <ActivityTable />
             </div>
-            <div className="fu" style={{ animationDelay: '0.18s' }}>
+            <div className="dashboard-col-right fu" style={{ animationDelay: '0.18s' }}>
               <InsightsPanel />
             </div>
           </div>

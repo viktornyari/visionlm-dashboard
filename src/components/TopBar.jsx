@@ -1,12 +1,13 @@
 import { bd, CARD, t1, t2, t3, t4, t5 } from '../constants'
 
-export default function TopBar({ dateOff, setDateOff }) {
+export default function TopBar({ dateOff, setDateOff, onMenuClick }) {
   const d = new Date('2024-01-15')
   d.setDate(d.getDate() + dateOff)
   const ds = d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })
 
   return (
     <header
+      className="dashboard-topbar"
       style={{
         height: 56,
         display: 'flex',
@@ -23,12 +24,26 @@ export default function TopBar({ dateOff, setDateOff }) {
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+        <button
+          type="button"
+          className="nb dashboard-menu-btn"
+          onClick={onMenuClick}
+          aria-label="Toggle menu"
+          style={{ display: 'none', alignItems: 'center', justifyContent: 'center', width: 36, height: 36, borderRadius: 8, color: t1 }}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
         <span style={{ fontFamily: "'Outfit',sans-serif", fontSize: 16, fontWeight: 700, color: t1 }}>Dashboard</span>
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={t3} strokeWidth="2">
           <polyline points="6 9 12 15 18 9" />
         </svg>
       </div>
       <div
+        className="dashboard-topbar-search"
         style={{
           flex: 1,
           maxWidth: 440,
@@ -71,7 +86,7 @@ export default function TopBar({ dateOff, setDateOff }) {
           ⌘K
         </div>
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
+      <div className="dashboard-topbar-actions" style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
         <div style={{ position: 'relative', cursor: 'pointer' }}>
           <div
             style={{
@@ -112,7 +127,7 @@ export default function TopBar({ dateOff, setDateOff }) {
             3
           </div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', background: CARD, border: `1px solid ${bd}`, borderRadius: 9, overflow: 'hidden' }}>
+        <div className="dashboard-topbar-date" style={{ display: 'flex', alignItems: 'center', background: CARD, border: `1px solid ${bd}`, borderRadius: 9, overflow: 'hidden' }}>
           <button
             type="button"
             className="nb"
@@ -169,6 +184,7 @@ export default function TopBar({ dateOff, setDateOff }) {
           </button>
         </div>
         <div
+          className="dashboard-topbar-profile"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -186,7 +202,7 @@ export default function TopBar({ dateOff, setDateOff }) {
             style={{ width: 26, height: 26, borderRadius: '50%', objectFit: 'cover' }}
             onError={(e) => (e.currentTarget.style.display = 'none')}
           />
-          <div>
+          <div className="dashboard-topbar-profile-text">
             <div style={{ fontSize: 11.5, fontWeight: 600, color: t1, lineHeight: 1.2 }}>Facility Admin</div>
             <div style={{ fontSize: 9.5, color: t4 }}>@admin</div>
           </div>

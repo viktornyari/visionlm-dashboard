@@ -22,14 +22,7 @@ export default function SavingsCard() {
   }, [])
 
   return (
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: 14,
-        width: '100%',
-      }}
-    >
+    <div className="savings-grid">
       {/* Card 1: Savings Value */}
       <div className="glass" style={{ padding: 18 }}>
         <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 13, fontWeight: 700, color: t1, marginBottom: 2 }}>
@@ -130,7 +123,7 @@ export default function SavingsCard() {
       </div>
 
       {/* Card 3: Monthly savings trend */}
-      <div className="glass" style={{ padding: 18, gridColumn: '1 / -1' }}>
+      <div className="glass savings-trend-card" style={{ padding: 18 }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
           <div style={{ fontSize: 11, color: t3 }}>Monthly savings trend (×1,000 Ft)</div>
           <div style={{ display: 'flex', gap: 4 }}>

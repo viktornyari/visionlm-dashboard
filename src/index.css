@@ -162,3 +162,215 @@ button {
 .btn-accent:active {
   transform: scale(0.98);
 }
+
+/* ----- Responsive layout ----- */
+.dashboard-main {
+  margin-left: 56px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.dashboard-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 16px 24px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.07) transparent;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 300px) 1fr minmax(220px, 256px);
+  grid-template-areas: 'left middle right';
+  gap: 12px;
+  align-items: start;
+  min-width: 0;
+}
+
+.dashboard-col-left {
+  grid-area: left;
+}
+
+.dashboard-col-middle {
+  grid-area: middle;
+}
+
+.dashboard-col-right {
+  grid-area: right;
+}
+
+.savings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+}
+
+.savings-trend-card {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 1280px) {
+  .dashboard-grid {
+    grid-template-columns: minmax(260px, 1fr) 1fr;
+    grid-template-areas:
+      'left middle'
+      'right right';
+  }
+}
+
+@media (max-width: 960px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'left'
+      'middle'
+      'right';
+  }
+
+  .savings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+  }
+
+  .dashboard-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: block;
+  }
+
+  .dashboard-menu-btn {
+    display: flex !important;
+  }
+
+  .dashboard-main {
+    margin-left: 0;
+  }
+
+  .dashboard-scroll {
+    padding: 14px 12px 20px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .dashboard-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    flex-shrink: 0;
+    padding: 0 10px !important;
+    flex-wrap: nowrap;
+    gap: 8px !important;
+    min-height: 48px;
+    height: 48px;
+    background: #030405 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .dashboard-topbar .dashboard-menu-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .dashboard-topbar .dashboard-menu-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dashboard-topbar > div:first-of-type span {
+    font-size: 14px !important;
+  }
+
+  .dashboard-topbar > div:first-of-type svg {
+    display: none;
+  }
+
+  .dashboard-topbar-search {
+    display: none !important;
+  }
+
+  .dashboard-topbar-actions {
+    gap: 6px !important;
+  }
+
+  .dashboard-topbar-actions > div:first-child > div {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 8px !important;
+  }
+
+  .dashboard-topbar-actions > div:first-child svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .dashboard-topbar-actions > div:first-child > div:last-child {
+    width: 12px !important;
+    height: 12px !important;
+    font-size: 7px !important;
+  }
+
+  .dashboard-topbar-date button {
+    width: 26px !important;
+    height: 30px !important;
+  }
+
+  .dashboard-topbar-date div {
+    padding: 0 6px !important;
+    font-size: 10px !important;
+    line-height: 30px !important;
+  }
+
+  .dashboard-topbar-date svg {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .dashboard-topbar-profile {
+    padding: 4px 6px 4px 4px !important;
+  }
+
+  .dashboard-topbar-profile-text {
+    display: none !important;
+  }
+
+  .dashboard-topbar-profile img {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .dashboard-topbar-profile svg {
+    width: 9px !important;
+    height: 9px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-topbar-search {
+    display: none !important;
+  }
+}
