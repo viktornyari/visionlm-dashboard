@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { WK, t1, t4, t5, bd, bd2, CARD2 } from '../constants'
+import { WK, t1, t3, t4, t5, bd, bd2, CARD2 } from '../constants'
 
 export default function WorkersCard() {
   const [page, setPage] = useState(0)

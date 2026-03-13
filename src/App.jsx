@@ -90,7 +90,7 @@ export default function App() {
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: '16px 18px 48px',
+            padding: '12px 16px 24px',
             scrollbarWidth: 'thin',
             scrollbarColor: 'rgba(255,255,255,0.07) transparent',
           }}
@@ -99,16 +99,16 @@ export default function App() {
             style={{
               display: 'grid',
               gridTemplateColumns: '300px 1fr 256px',
-              gap: 14,
+              gap: 12,
               alignItems: 'start',
               minWidth: 0,
             }}
           >
-            <div className="fu" style={{ animationDelay: '0.06s', display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <div className="fu" style={{ animationDelay: '0.06s', display: 'flex', flexDirection: 'column', gap: 10 }}>
               <OverviewCard />
               <WorkersCard />
             </div>
-            <div className="fu" style={{ animationDelay: '0.12s', display: 'flex', flexDirection: 'column', gap: 12, minWidth: 0 }}>
+            <div className="fu" style={{ animationDelay: '0.12s', display: 'flex', flexDirection: 'column', gap: 10, minWidth: 0 }}>
               <SavingsCard />
               <ActivityTable />
             </div>

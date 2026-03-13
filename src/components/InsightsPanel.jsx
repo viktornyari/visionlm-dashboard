@@ -128,7 +128,7 @@ export default function InsightsPanel() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '24px 1fr 56px 64px',
+            gridTemplateColumns: '24px 1fr 56px 82px',
             gap: 6,
             padding: '6px 14px',
             background: 'rgba(255,255,255,0.015)',
@@ -148,7 +148,7 @@ export default function InsightsPanel() {
               key={i}
               style={{
                 display: 'grid',
-                gridTemplateColumns: '24px 1fr 56px 64px',
+                gridTemplateColumns: '24px 1fr 56px 82px',
                 gap: 6,
                 padding: '9px 14px',
                 borderBottom: '1px solid rgba(255,255,255,0.03)',
@@ -160,7 +160,7 @@ export default function InsightsPanel() {
               onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
             >
               <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 11.5, fontWeight: 700, color: t4 }}>#{m.rank}</div>
-              <div>
+              <div style={{ minWidth: 0 }}>
                 <div
                   style={{
                     fontSize: 11,
@@ -169,13 +169,13 @@ export default function InsightsPanel() {
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
-                    maxWidth: 120,
+                    maxWidth: 140,
                   }}
                 >
                   {m.name}
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 3, marginTop: 3 }}>
-                  <div style={{ display: 'flex' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 4, flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', flexShrink: 0 }}>
                     {m.fol.map((f, j) => (
                       <img
                         key={j}
@@ -193,7 +193,7 @@ export default function InsightsPanel() {
                       />
                     ))}
                   </div>
-                  <span style={{ fontSize: 8.5, color: t4, marginLeft: 4 }}>{m.date}</span>
+                  <span style={{ fontSize: 9.5, color: t2, fontWeight: 500, whiteSpace: 'nowrap' }}>{m.date}</span>
                 </div>
               </div>
               <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 10.5, fontWeight: 600, color: t2, whiteSpace: 'nowrap' }}>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import LineChart from './LineChart'
-import { t1, t3, t4, t5, bd, CARD2, ACB, AC2, AC, AMB } from '../constants'
+import { t1, t2, t3, t4, t5, bd, CARD2, ACB, AC2, AC, AMB } from '../constants'
 
 export default function OverviewCard() {
   const [tab, setTab] = useState('Week')

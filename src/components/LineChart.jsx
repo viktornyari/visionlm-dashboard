@@ -81,7 +81,7 @@ export default function LineChart({ mode = 'total' }) {
   )
 
   return (
-    <div style={{ height: 168, width: '100%' }}>
+    <div style={{ height: 140, width: '100%' }}>
       <Line data={chartData} options={options} />
     </div>
   )

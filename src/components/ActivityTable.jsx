@@ -13,12 +13,12 @@ export default function ActivityTable() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '13px 16px 11px',
+          padding: '8px 14px 6px',
           borderBottom: '1px solid rgba(255,255,255,0.05)',
         }}
       >
-        <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1, display: 'flex', alignItems: 'center', gap: 6 }}>
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={AC} strokeWidth="2" strokeLinecap="round">
+        <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 12, fontWeight: 700, color: t1, display: 'flex', alignItems: 'center', gap: 5 }}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={AC} strokeWidth="2" strokeLinecap="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
             <circle cx="9" cy="7" r="4" />
             <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -76,16 +76,16 @@ export default function ActivityTable() {
                 <th
                   key={i}
                   style={{
-                    padding: '7px 12px',
+                    padding: '4px 10px',
                     textAlign: 'left',
-                    fontSize: 9,
+                    fontSize: 8.5,
                     fontWeight: 700,
-                    letterSpacing: 0.7,
+                    letterSpacing: 0.6,
                     textTransform: 'uppercase',
                     color: t4,
                     whiteSpace: 'nowrap',
-                    paddingLeft: i === 0 ? 16 : 12,
-                    paddingRight: i === HDR.length - 1 ? 16 : 12,
+                    paddingLeft: i === 0 ? 14 : 10,
+                    paddingRight: i === HDR.length - 1 ? 14 : 10,
                   }}
                 >
                   {h}
@@ -108,31 +108,31 @@ export default function ActivityTable() {
                     background: isSel ? 'rgba(0,206,176,0.042)' : 'transparent',
                   }}
                 >
-                  <td style={{ padding: '9px 12px', paddingLeft: 16 }}>
-                    <span style={{ fontFamily: "'Outfit',sans-serif", fontSize: 13, fontWeight: 700, color: t4 }}>#{r.rank}</span>
+                  <td style={{ padding: '4px 10px', paddingLeft: 14 }}>
+                    <span style={{ fontFamily: "'Outfit',sans-serif", fontSize: 11.5, fontWeight: 700, color: t4 }}>#{r.rank}</span>
                   </td>
-                  <td style={{ padding: '9px 12px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <td style={{ padding: '4px 10px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                       <img
                         src={`https://i.pravatar.cc/56?img=${r.img}`}
                         alt={r.name}
-                        style={{ width: 28, height: 28, borderRadius: '50%', objectFit: 'cover', border: `1.5px solid ${bd2}`, flexShrink: 0 }}
+                        style={{ width: 22, height: 22, borderRadius: '50%', objectFit: 'cover', border: `1px solid ${bd2}`, flexShrink: 0 }}
                         onError={(e) => (e.currentTarget.style.display = 'none')}
                       />
                       <div>
-                        <div style={{ fontSize: 11.5, fontWeight: 500, color: t1, whiteSpace: 'nowrap' }}>{r.name}</div>
-                        <div style={{ fontFamily: 'monospace', fontSize: 9, color: t4 }}>{r.id}</div>
+                        <div style={{ fontSize: 10.5, fontWeight: 500, color: t1, whiteSpace: 'nowrap' }}>{r.name}</div>
+                        <div style={{ fontFamily: 'monospace', fontSize: 8.5, color: t4 }}>{r.id}</div>
                       </div>
                     </div>
                   </td>
-                  <td style={{ padding: '9px 12px' }}>
+                  <td style={{ padding: '4px 10px' }}>
                     <span
                       style={{
                         display: 'inline-flex',
                         alignItems: 'center',
-                        padding: '3px 8px',
-                        borderRadius: 5,
-                        fontSize: 9.5,
+                        padding: '2px 6px',
+                        borderRadius: 4,
+                        fontSize: 9,
                         fontWeight: 600,
                         background: b.bg,
                         color: b.col,
@@ -143,11 +143,11 @@ export default function ActivityTable() {
                       {b.lbl}
                     </span>
                   </td>
-                  <td style={{ padding: '9px 12px' }}>
+                  <td style={{ padding: '4px 10px' }}>
                     <span
                       style={{
-                        fontSize: 10,
-                        padding: '2px 7px',
+                        fontSize: 9,
+                        padding: '2px 6px',
                         borderRadius: 4,
                         background: t5,
                         border: `1px solid ${bd}`,
@@ -158,23 +158,23 @@ export default function ActivityTable() {
                       {r.zone}
                     </span>
                   </td>
-                  <td style={{ padding: '9px 12px' }}>
-                    <span style={{ fontFamily: 'monospace', fontSize: 10, color: t2 }}>{r.dur}</span>
+                  <td style={{ padding: '4px 10px' }}>
+                    <span style={{ fontFamily: 'monospace', fontSize: 9.5, color: t2 }}>{r.dur}</span>
                   </td>
-                  <td style={{ padding: '9px 12px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                      <span style={{ fontFamily: "'Outfit',sans-serif", fontSize: 13, fontWeight: 800, color: pc }}>{r.prod}%</span>
-                      <div style={{ width: 38, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
+                  <td style={{ padding: '4px 10px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+                      <span style={{ fontFamily: "'Outfit',sans-serif", fontSize: 11.5, fontWeight: 800, color: pc }}>{r.prod}%</span>
+                      <div style={{ width: 32, height: 2, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
                         <div style={{ height: '100%', width: `${r.prod}%`, background: pc, borderRadius: 2 }} />
                       </div>
                     </div>
                   </td>
-                  <td style={{ padding: '9px 12px' }}>
+                  <td style={{ padding: '4px 10px' }}>
                     <div
                       style={{
-                        width: 54,
-                        height: 34,
-                        borderRadius: 5,
+                        width: 42,
+                        height: 26,
+                        borderRadius: 4,
                         overflow: 'hidden',
                         border: `1px solid ${bd}`,
                         position: 'relative',
@@ -206,10 +206,10 @@ export default function ActivityTable() {
                       <div
                         style={{
                           position: 'absolute',
-                          top: 3,
-                          right: 3,
-                          width: 5,
-                          height: 5,
+                          top: 2,
+                          right: 2,
+                          width: 4,
+                          height: 4,
                           borderRadius: '50%',
                           background: AC,
                           animation: 'pglow 2s ease-in-out infinite',
@@ -217,10 +217,10 @@ export default function ActivityTable() {
                       />
                     </div>
                   </td>
-                  <td style={{ padding: '9px 12px' }}>
-                    <span style={{ fontSize: 10, color: t3, whiteSpace: 'nowrap' }}>{r.last}</span>
+                  <td style={{ padding: '4px 10px' }}>
+                    <span style={{ fontSize: 9.5, color: t3, whiteSpace: 'nowrap' }}>{r.last}</span>
                   </td>
-                  <td style={{ padding: '9px 16px 9px 12px' }}>
+                  <td style={{ padding: '4px 14px 4px 10px' }}>
                     <div style={{ display: 'flex', gap: 4 }}>
                       <button type="button" className="btn-ghost">
                         View
@@ -241,25 +241,25 @@ export default function ActivityTable() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '9px 16px',
+          padding: '6px 14px',
           borderTop: '1px solid rgba(255,255,255,0.04)',
         }}
       >
-        <span style={{ fontSize: 10, color: t4 }}>Showing 6 of 42 persons on record</span>
-        <div style={{ display: 'flex', gap: 5 }}>
+        <span style={{ fontSize: 9.5, color: t4 }}>Showing 6 of 42 persons on record</span>
+        <div style={{ display: 'flex', gap: 4 }}>
           {['←', '→'].map((c, i) => (
             <button
               key={i}
               type="button"
               className="nb"
               style={{
-                width: 26,
-                height: 26,
-                borderRadius: 6,
+                width: 22,
+                height: 22,
+                borderRadius: 5,
                 background: t5,
                 border: `1px solid ${bd}`,
                 color: t3,
-                fontSize: 12,
+                fontSize: 11,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
