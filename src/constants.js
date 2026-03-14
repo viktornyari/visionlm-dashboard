@@ -106,23 +106,27 @@ export const PERSONAS = [
 // ── SCADA v7 data ──────────────────────────────────────────
 
 export const S = {
-  bg:      '#0e1010',
-  panel:   '#161818',
-  panel2:  '#1d1f1f',
-  panel3:  '#242727',
-  border:  '#2c2f2f',
-  border2: '#3d4141',
-  t1:      '#e0e4e4',
-  t2:      '#7a8484',
-  t3:      '#4a5252',
-  blue:    '#3D8FC4',
-  blueB:   'rgba(61,143,196,0.14)',
-  green:   '#4DA862',
-  greenB:  'rgba(77,168,98,0.10)',
-  amber:   '#C98A0A',
-  amberB:  'rgba(201,138,10,0.14)',
-  red:     '#B83232',
-  redB:    'rgba(184,50,50,0.14)',
+  // WinCC V8 — Siemens 2024 dark navy palette (from ElectronicsDemo reference)
+  bg:      '#0d1117',   // near-black with blue tint — page background
+  panel:   '#131c28',   // dark navy — panel body
+  panel2:  '#1a2535',   // medium navy — panel headers, table headers
+  panel3:  '#1e2a3a',   // slightly lighter — hover, alternating rows
+  chartBg: '#080c12',   // darkest — chart/camera areas
+  border:  '#1e2a3a',   // blue-tinted 1px borders
+  border2: '#2a3d52',   // hover/focus borders
+  sidebar: '#0a0d12',   // slightly darker than bg — sidebar
+  t1:      '#e8eef4',   // cool white — primary text
+  t2:      '#7a96aa',   // blue-grey — secondary text
+  t3:      '#445a6a',   // muted — labels, hints
+  // Siemens teal-cyan — the primary WinCC V8 accent
+  blue:    '#00B4C8',   // teal-cyan (NOT steel blue)
+  blueB:   'rgba(0,180,200,0.12)',
+  green:   '#28A050',   // ok/running — saturated mid-green
+  greenB:  'rgba(40,160,80,0.12)',
+  amber:   '#C49010',   // warning — amber-gold
+  amberB:  'rgba(196,144,16,0.14)',
+  red:     '#C82828',   // fault/alarm — mid-red
+  redB:    'rgba(200,40,40,0.14)',
   mono:    "'JetBrains Mono','SF Mono','Courier New',monospace",
 }
 

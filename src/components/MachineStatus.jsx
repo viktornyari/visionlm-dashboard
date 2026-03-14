@@ -33,7 +33,7 @@ export default function MachineStatus() {
         const sc    = STATUS_COLOR[m.status]
         const color = sc==='blue' ? S.blue : sc==='red' ? S.red : S.amber
         const bg    = sc==='blue' ? S.blueB : sc==='red' ? S.redB : S.amberB
-        const bd    = sc==='blue' ? 'rgba(74,158,204,0.35)' : sc==='red' ? 'rgba(204,60,60,0.35)' : 'rgba(217,148,10,0.35)'
+        const bd    = sc==='blue' ? 'rgba(0,180,200,0.35)' : sc==='red' ? 'rgba(204,60,60,0.35)' : 'rgba(217,148,10,0.35)'
         return (
           <div key={m.id} className="tbl-row"
             style={{ display:'grid', gridTemplateColumns:COLS, gap:0, padding:'8px 14px', borderBottom:`1px solid rgba(255,255,255,0.03)`, alignItems:'center' }}>
@@ -81,7 +81,7 @@ export default function MachineStatus() {
 
       <div style={{ padding:'7px 14px', borderTop:`1px solid ${S.border}`, display:'flex', alignItems:'center', justifyContent:'space-between' }}>
         <span style={{ fontSize:9.5, color:S.t3 }}>IoT · Shelly Pro 3EM · polling 5s</span>
-        <button type="button" className="btn btn-blue" style={{ fontSize:9.5, padding:'3px 9px' }}>All Machines →</button>
+        <button type="button" className="btn btn-teal" style={{ fontSize:9.5, padding:'3px 9px' }}>All Machines →</button>
       </div>
     </div>
   )

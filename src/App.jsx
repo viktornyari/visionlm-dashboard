@@ -12,25 +12,16 @@ export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div style={{ display:'flex', height:'100vh', background:'#1a1c1a', overflow:'hidden', fontFamily:"'DM Sans',sans-serif" }}>
+    <div style={{ display:'flex', height:'100vh', background:'#0d1117', overflow:'hidden', fontFamily:"'DM Sans',sans-serif" }}>
       <Sidebar active={active} setActive={setActive} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
-
       <div className="dashboard-main">
         <TopBar onMenuClick={() => setSidebarOpen(o => !o)}/>
-
         <div className="dashboard-scroll">
-          {/* Row 1 — Factory Status (big numbers) */}
-          <div className="fu" style={{ animationDelay:'0.04s' }}>
-            <FactoryStatusBar/>
-          </div>
-
-          {/* Row 2 — Camera wall + Event feed */}
+          <div className="fu" style={{ animationDelay:'0.04s' }}><FactoryStatusBar/></div>
           <div className="cam-events-row fu" style={{ animationDelay:'0.10s' }}>
             <CameraWall/>
             <EventFeed/>
           </div>
-
-          {/* Row 3 — Worker scoreboard + Machine status */}
           <div className="bottom-row fu" style={{ animationDelay:'0.18s' }}>
             <WorkerScoreboard/>
             <MachineStatus/>

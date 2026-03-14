@@ -32,7 +32,7 @@ function CamTile({ cam }) {
 
       {/* Status badge */}
       <div style={{ position:'absolute', top:5, right:5, display:'flex', alignItems:'center', gap:4, padding:'2px 7px', background:'rgba(0,0,0,0.72)', borderRadius:2 }}>
-        <div className={isOffline ? 'dot-grey' : hasAlert ? 'dot-red blink' : 'dot-green'} style={{ width:5, height:5 }}/>
+        <div className={isOffline ? 'dot-grey' : hasAlert ? 'dot-red blink' : 'dot-teal'} style={{ width:5, height:5 }}/>
         <span className="mono" style={{ fontSize:8.5, color: isOffline ? S.t3 : hasAlert ? S.red : S.green, fontWeight:600, letterSpacing:0.5 }}>
           {isOffline ? 'OFF' : 'LIVE'}
         </span>
@@ -65,9 +65,9 @@ export default function CameraWall() {
   const alerts  = CAMERAS.filter(c => c.alert).length
 
   return (
-    <div className="panel" style={{ padding:'11px 12px' }}>
+    <div className="panel panel-hd-accent" style={{ padding:0 }}>
       {/* Header */}
-      <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:10 }}>
+      <div className="panel-hd" style={{}}>
         <div style={{ display:'flex', alignItems:'center', gap:8 }}>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={S.blue} strokeWidth="2" strokeLinecap="round">
             <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>
@@ -78,12 +78,14 @@ export default function CameraWall() {
           <span style={{ fontSize:10, color:S.green }}>{online} online</span>
           {offline > 0 && <span style={{ fontSize:10, color:S.red }}>{offline} offline</span>}
           {alerts  > 0 && <span style={{ fontSize:10, color:S.red, animation:'blink 1.2s step-end infinite' }}>{alerts} alerts</span>}
-          <button type="button" className="btn btn-blue" style={{ fontSize:10, padding:'3px 9px' }}>Full Screen</button>
+          <button type="button" className="btn btn-teal" style={{ fontSize:10, padding:'3px 9px' }}>Full Screen</button>
         </div>
       </div>
       {/* Grid */}
-      <div className="camera-grid">
-        {CAMERAS.map(cam => <CamTile key={cam.id} cam={cam}/>)}
+      <div style={{ padding:'8px' }}>
+        <div className="camera-grid">
+          {CAMERAS.map(cam => <CamTile key={cam.id} cam={cam}/>)}
+        </div>
       </div>
     </div>
   )

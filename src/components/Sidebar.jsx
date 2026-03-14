@@ -2,7 +2,7 @@ import { S } from '../constants'
 
 const NAV_ITEMS = [
   { id: 'Dashboard',    icon: ['M3 3h7v7H3z','M14 3h7v7h-7z','M14 14h7v7h-7z','M3 14h7v7H3z'] },
-  { id: 'Live Cameras', icon: ['M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'], extra:'cam' },
+  { id: 'Live Cameras', icon: ['M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'], extra:'cam', badge:'2', badgeSev:'amber' },
   { id: 'Events',       icon: ['M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z','M14 2v6h6','M16 13H8','M16 17H8','M10 9H8'], badge:'4', badgeSev:'red' },
   { id: 'Workers',      icon: ['M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2','M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z'] },
   { id: 'Machines',     icon: ['M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'] },
@@ -19,21 +19,25 @@ export default function Sidebar({ active, setActive, sidebarOpen, setSidebarOpen
         <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)}
           role="button" tabIndex={0} onKeyDown={e => e.key === 'Escape' && setSidebarOpen(false)} aria-label="Close" />
       )}
-      <aside className={`dashboard-sidebar${sidebarOpen ? ' sidebar-open' : ''}`}>
-        <div style={{ padding:'0 14px', height:48, display:'flex', alignItems:'center', gap:10, borderBottom:`1px solid ${S.border}`, flexShrink:0 }}>
-          <div style={{ width:26, height:26, borderRadius:3, background:S.blueB, border:`1px solid rgba(74,158,204,0.28)`, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={S.blue} strokeWidth="2" strokeLinecap="round">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="1" fill={S.blue} stroke="none"/>
-            </svg>
-          </div>
+      <aside className={`dashboard-sidebar${sidebarOpen ? ' sidebar-open' : ''}`}
+        style={{ borderTop:`2px solid ${S.blue}` }}>
+
+        {/* Logo */}
+        <div style={{ padding:'0 14px', height:46, display:'flex', alignItems:'center', gap:9, borderBottom:`1px solid ${S.border}`, flexShrink:0, background:S.sidebar }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={S.blue} strokeWidth="2" strokeLinecap="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+            <circle cx="12" cy="12" r="1" fill={S.blue} stroke="none"/>
+          </svg>
           <div>
-            <div style={{ fontFamily:"'Outfit',sans-serif", fontSize:13.5, fontWeight:700, color:S.t1, lineHeight:1 }}>Vision LM</div>
-            <div style={{ fontSize:9, color:S.t3, textTransform:'uppercase', letterSpacing:1, marginTop:1 }}>Industrial AI</div>
+            <div style={{ fontFamily:"'Outfit',sans-serif", fontSize:13, fontWeight:700, color:S.t1, lineHeight:1 }}>Vision LM</div>
+            <div style={{ fontSize:8.5, color:S.t3, textTransform:'uppercase', letterSpacing:1.2, marginTop:2 }}>Industrial AI</div>
           </div>
         </div>
 
-        <nav style={{ flex:1, overflowY:'auto', padding:'8px 8px', scrollbarWidth:'none' }}>
-          <div className="sec-label" style={{ padding:'8px 4px 6px' }}>Navigation</div>
+        {/* Nav */}
+        <nav style={{ flex:1, overflowY:'auto', padding:'8px 0', scrollbarWidth:'none' }}>
+          <div className="sec-label" style={{ padding:'8px 14px 5px' }}>Navigation</div>
           {NAV_ITEMS.map(item => {
             const on = active === item.id
             return (
@@ -48,10 +52,10 @@ export default function Sidebar({ active, setActive, sidebarOpen, setSidebarOpen
                 </svg>
                 {item.id}
                 {item.badge && (
-                  <span style={{ marginLeft:'auto', fontSize:9, fontWeight:700, padding:'1px 5px', borderRadius:3,
-                    background: item.badgeSev==='red' ? 'rgba(204,60,60,0.15)' : 'rgba(217,148,10,0.15)',
+                  <span style={{ marginLeft:'auto', fontSize:9, fontWeight:700, padding:'1px 5px', borderRadius:0,
+                    background: item.badgeSev==='red' ? 'rgba(200,40,40,0.15)' : 'rgba(196,144,16,0.15)',
                     color: item.badgeSev==='red' ? S.red : S.amber,
-                    border: `1px solid ${item.badgeSev==='red' ? 'rgba(204,60,60,0.3)' : 'rgba(217,148,10,0.3)'}` }}>
+                    border: `1px solid ${item.badgeSev==='red' ? 'rgba(200,40,40,0.35)' : 'rgba(196,144,16,0.35)'}` }}>
                     {item.badge}
                   </span>
                 )}
@@ -60,13 +64,14 @@ export default function Sidebar({ active, setActive, sidebarOpen, setSidebarOpen
           })}
         </nav>
 
-        <div style={{ padding:'10px 10px 14px', borderTop:`1px solid ${S.border}`, flexShrink:0 }}>
+        {/* Footer */}
+        <div style={{ padding:'10px 12px 14px', borderTop:`1px solid ${S.border}`, flexShrink:0 }}>
           <div style={{ display:'flex', alignItems:'center', gap:7, marginBottom:8 }}>
-            <div className="dot-green" style={{ animation:'blink 2.5s ease-in-out infinite' }}/>
+            <div className="dot-teal" style={{ animation:'blink 2.5s step-end infinite' }}/>
             <span style={{ fontSize:11, color:S.t2, fontWeight:500 }}>Pipeline running</span>
           </div>
           <button type="button" className="btn btn-red" style={{ width:'100%', display:'flex', alignItems:'center', justifyContent:'center', gap:5 }}>
-            <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="0"/></svg>
             Stop Pipeline
           </button>
         </div>
