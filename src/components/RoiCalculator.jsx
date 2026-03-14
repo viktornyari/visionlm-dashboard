@@ -92,7 +92,7 @@ export default function RoiCalculator({ highlight }) {
       <div style={{ background: 'rgba(0,206,176,0.05)', border: '1px solid rgba(0,206,176,0.16)', borderRadius: 10, padding: '11px 13px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div>
           <div style={{ fontSize: 8.5, color: t4, textTransform: 'uppercase', letterSpacing: 0.6, marginBottom: 3 }}>Annual saving</div>
-          <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 20, fontWeight: 900, background: `linear-gradient(135deg,${ACB},${AC2})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1 }}>
+          <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 14, fontWeight: 900, background: `linear-gradient(135deg,${ACB},${AC2})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1, whiteSpace: 'nowrap' }}>
             + {savedYear.toLocaleString()} Ft
           </div>
         </div>
