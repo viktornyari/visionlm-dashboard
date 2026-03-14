@@ -24,7 +24,7 @@ export default function TopBar({ onMenuClick }) {
       {/* Left */}
       <div style={{ display:'flex', alignItems:'center', gap:10 }}>
         <button type="button" className="btn dashboard-menu-btn" onClick={onMenuClick}
-          style={{ display:'none', width:30, height:30, padding:0, alignItems:'center', justifyContent:'center' }}>
+          style={{ width:30, height:30, padding:0, display:'none', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
           </svg>
@@ -49,8 +49,8 @@ export default function TopBar({ onMenuClick }) {
         </div>
       </div>
 
-      {/* Center — live clock (WinCC V8 style) */}
-      <div style={{ display:'flex', alignItems:'center', gap:14 }}>
+      {/* Center — live clock */}
+      <div className="dashboard-topbar-center" style={{ display:'flex', alignItems:'center', gap:14 }}>
         <span style={{ fontSize:10.5, color:S.t3 }}>
           Shift start:&nbsp;
           <span className="mono" style={{ color:S.t2 }}>{FACTORY_STATUS.shiftStart}</span>

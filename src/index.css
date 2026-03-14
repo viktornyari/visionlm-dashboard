@@ -200,8 +200,72 @@ input[type='range']::-moz-range-thumb { width: 11px; height: 11px; border-radius
   .dashboard-main { margin-left: 0; }
   .bottom-row { grid-template-columns: 1fr; }
   .camera-grid { grid-template-columns: repeat(2,1fr); }
+  .dashboard-menu-btn { display: flex !important; }
 }
 @media (max-width: 640px) {
   .camera-grid { grid-template-columns: repeat(2,1fr); }
   .dashboard-scroll { padding: 6px 6px 30px; }
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE TABLE GRIDS
+   ══════════════════════════════════════════ */
+
+/* Worker Scoreboard grid */
+.ws-grid {
+  display: grid;
+  grid-template-columns: minmax(130px,1fr) 82px 58px 70px 36px;
+  gap: 0;
+  align-items: center;
+}
+
+/* Machine Status grid */
+.ms-grid {
+  display: grid;
+  grid-template-columns: minmax(120px,1fr) 90px 130px 68px 64px;
+  gap: 0;
+  align-items: center;
+}
+
+/* ── Mobile: menu button shown ── */
+@media (max-width: 768px) {
+  .dashboard-menu-btn { display: flex !important; }
+
+  /* TopBar: tighter on mobile */
+  .dashboard-topbar-center { display: none !important; }
+
+  /* Worker scoreboard — drop Zone column on small screens */
+  .ws-grid {
+    grid-template-columns: minmax(100px,1fr) 70px 54px 0px 32px;
+  }
+  .ws-col-zone { display: none; }
+  .ws-col-3    { display: none; }
+
+  /* Machine Status — drop Power + Uptime on small screens */
+  .ms-grid {
+    grid-template-columns: minmax(100px,1fr) 80px 100px 0 0;
+  }
+  .ms-col-power  { display: none; }
+  .ms-col-uptime { display: none; }
+  .ms-col-3      { display: none; }
+  .ms-col-4      { display: none; }
+  .ms-bar-wrap   { max-width: 50px; }
+}
+
+@media (max-width: 480px) {
+  /* Even tighter: drop Idle column from worker scoreboard */
+  .ws-grid {
+    grid-template-columns: minmax(90px,1fr) 64px 0 0 32px;
+  }
+  .ws-col-2 { display: none; }
+
+  /* Machine: only name + status + load% */
+  .ms-grid {
+    grid-template-columns: minmax(90px,1fr) 76px 80px 0 0;
+  }
+}
+
+/* Dashboard menu button */
+.dashboard-menu-btn {
+  display: none;
 }
