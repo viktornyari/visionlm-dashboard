@@ -1,218 +1,76 @@
-import { NAV, AC, bd, t2, t4 } from '../constants'
+import { S } from '../constants'
+
+const NAV_ITEMS = [
+  { id: 'Dashboard',    icon: ['M3 3h7v7H3z','M14 3h7v7h-7z','M14 14h7v7h-7z','M3 14h7v7H3z'] },
+  { id: 'Live Cameras', icon: ['M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'], extra:'cam' },
+  { id: 'Events',       icon: ['M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z','M14 2v6h6','M16 13H8','M16 17H8','M10 9H8'], badge:'4', badgeSev:'red' },
+  { id: 'Workers',      icon: ['M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2','M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z'] },
+  { id: 'Machines',     icon: ['M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'] },
+  { id: 'Zones',        icon: ['M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z','M8 2v16','M16 6v16'] },
+  { id: 'Safety',       icon: ['M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'] },
+  { id: 'Reports',      icon: ['M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z','M14 2v6h6'] },
+  { id: 'Settings',     icon: ['M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z','M19.07 4.93l-1.41 1.41M3.52 19.07l1.41-1.41M4.93 4.93l1.41 1.41M19.07 19.07l-1.41-1.41M12 2v2M12 20v2M2 12h2M20 12h2'] },
+]
 
 export default function Sidebar({ active, setActive, sidebarOpen, setSidebarOpen }) {
   return (
     <>
       {sidebarOpen && (
-        <div
-          className="sidebar-overlay"
-          onClick={() => setSidebarOpen(false)}
-          onKeyDown={(e) => e.key === 'Escape' && setSidebarOpen(false)}
-          role="button"
-          tabIndex={0}
-          aria-label="Close menu"
-        />
+        <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)}
+          role="button" tabIndex={0} onKeyDown={e => e.key === 'Escape' && setSidebarOpen(false)} aria-label="Close" />
       )}
-      <aside
-        className={`dashboard-sidebar ${sidebarOpen ? 'sidebar-open' : ''}`}
-      style={{
-        width: 56,
-        flexShrink: 0,
-        background: 'rgba(4,5,6,0.92)',
-        backdropFilter: 'blur(24px)',
-        WebkitBackdropFilter: 'blur(24px)',
-        borderRight: `1px solid ${bd}`,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        bottom: 0,
-        zIndex: 100,
-      }}
-    >
-      <div
-        style={{
-          height: 2,
-          width: '100%',
-          background: `linear-gradient(90deg,transparent,${AC},#00A8CC,transparent)`,
-          opacity: 0.7,
-          flexShrink: 0,
-        }}
-      />
-      <div
-        style={{
-          width: 56,
-          height: 56,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderBottom: `1px solid ${bd}`,
-          flexShrink: 0,
-        }}
-      >
-        <div
-          style={{
-            width: 32,
-            height: 32,
-            borderRadius: 9,
-            background: 'rgba(0,206,176,0.10)',
-            border: '1px solid rgba(0,206,176,0.22)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 0 16px rgba(0,206,176,0.18)',
-          }}
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={AC} strokeWidth="2" strokeLinecap="round">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-            <circle cx="12" cy="12" r="3" />
-            <circle cx="12" cy="12" r="1" fill={AC} stroke="none" />
-          </svg>
+      <aside className={`dashboard-sidebar${sidebarOpen ? ' sidebar-open' : ''}`}>
+        <div style={{ padding:'0 14px', height:48, display:'flex', alignItems:'center', gap:10, borderBottom:`1px solid ${S.border}`, flexShrink:0 }}>
+          <div style={{ width:26, height:26, borderRadius:3, background:S.blueB, border:`1px solid rgba(74,158,204,0.28)`, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={S.blue} strokeWidth="2" strokeLinecap="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="1" fill={S.blue} stroke="none"/>
+            </svg>
+          </div>
+          <div>
+            <div style={{ fontFamily:"'Outfit',sans-serif", fontSize:13.5, fontWeight:700, color:S.t1, lineHeight:1 }}>Vision LM</div>
+            <div style={{ fontSize:9, color:S.t3, textTransform:'uppercase', letterSpacing:1, marginTop:1 }}>Industrial AI</div>
+          </div>
         </div>
-      </div>
-      <nav
-        style={{
-          flex: 1,
-          overflowY: 'auto',
-          overflowX: 'hidden',
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          padding: '8px 0',
-          gap: 2,
-          scrollbarWidth: 'none',
-        }}
-      >
-        {NAV.map((item) => {
-          const isAct = active === item.id
-          return (
-            <div
-              key={item.id}
-              title={item.id}
-              onClick={() => { setActive(item.id); setSidebarOpen?.(false) }}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && setActive(item.id)}
-              style={{
-                position: 'relative',
-                width: 40,
-                height: 36,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: 8,
-                cursor: 'pointer',
-                background: isAct ? 'rgba(0,206,176,0.10)' : 'transparent',
-                border: isAct ? '1px solid rgba(0,206,176,0.18)' : '1px solid transparent',
-                color: isAct ? AC : t4,
-                transition: 'all 0.15s',
-              }}
-              onMouseEnter={(e) => {
-                if (!isAct) {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
-                  e.currentTarget.style.color = t2
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (!isAct) {
-                  e.currentTarget.style.background = 'transparent'
-                  e.currentTarget.style.color = t4
-                }
-              }}
-            >
-              {isAct && (
-                <div
-                  style={{
-                    position: 'absolute',
-                    left: -1,
-                    top: '24%',
-                    bottom: '24%',
-                    width: 2.5,
-                    background: AC,
-                    borderRadius: '0 2px 2px 0',
-                    boxShadow: `0 0 8px ${AC}`,
-                  }}
-                />
-              )}
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                {item.paths.map((d, j) => (
-                  <path key={j} d={d} />
-                ))}
-                {item.extra === 'camera' && (
-                  <circle cx="12" cy="13" r="4" stroke="currentColor" strokeWidth="1.8" fill="none" />
+
+        <nav style={{ flex:1, overflowY:'auto', padding:'8px 8px', scrollbarWidth:'none' }}>
+          <div className="sec-label" style={{ padding:'8px 4px 6px' }}>Navigation</div>
+          {NAV_ITEMS.map(item => {
+            const on = active === item.id
+            return (
+              <div key={item.id} className={`nav-item${on ? ' active' : ''}`}
+                onClick={() => { setActive(item.id); setSidebarOpen?.(false) }}
+                role="button" tabIndex={0}
+                onKeyDown={e => e.key === 'Enter' && setActive(item.id)}
+                style={{ position:'relative' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  {item.icon.map((d,j) => <path key={j} d={d}/>)}
+                  {item.extra === 'cam' && <circle cx="12" cy="13" r="4" stroke="currentColor" strokeWidth="1.8" fill="none"/>}
+                </svg>
+                {item.id}
+                {item.badge && (
+                  <span style={{ marginLeft:'auto', fontSize:9, fontWeight:700, padding:'1px 5px', borderRadius:3,
+                    background: item.badgeSev==='red' ? 'rgba(204,60,60,0.15)' : 'rgba(217,148,10,0.15)',
+                    color: item.badgeSev==='red' ? S.red : S.amber,
+                    border: `1px solid ${item.badgeSev==='red' ? 'rgba(204,60,60,0.3)' : 'rgba(217,148,10,0.3)'}` }}>
+                    {item.badge}
+                  </span>
                 )}
-              </svg>
-              {item.badge && (
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: 3,
-                    right: 3,
-                    minWidth: 14,
-                    height: 14,
-                    borderRadius: 7,
-                    padding: '0 3px',
-                    background: `${item.badgeCol}28`,
-                    color: item.badgeCol,
-                    fontSize: 8,
-                    fontWeight: 800,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: `1px solid ${item.badgeCol}44`,
-                  }}
-                >
-                  {item.badge}
-                </div>
-              )}
-            </div>
-          )
-        })}
-      </nav>
-      <div
-        style={{
-          padding: '10px 0 14px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: 8,
-          borderTop: `1px solid ${bd}`,
-          width: '100%',
-        }}
-      >
-        <div
-          style={{
-            width: 7,
-            height: 7,
-            borderRadius: '50%',
-            background: AC,
-            animation: 'pglow 2s ease-in-out infinite',
-            boxShadow: `0 0 8px ${AC}`,
-          }}
-        />
-        <div
-          style={{
-            width: 40,
-            height: 34,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderRadius: 8,
-            cursor: 'pointer',
-            color: t4,
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = t2)}
-          onMouseLeave={(e) => (e.currentTarget.style.color = t4)}
-        >
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" />
-          </svg>
+              </div>
+            )
+          })}
+        </nav>
+
+        <div style={{ padding:'10px 10px 14px', borderTop:`1px solid ${S.border}`, flexShrink:0 }}>
+          <div style={{ display:'flex', alignItems:'center', gap:7, marginBottom:8 }}>
+            <div className="dot-green" style={{ animation:'blink 2.5s ease-in-out infinite' }}/>
+            <span style={{ fontSize:11, color:S.t2, fontWeight:500 }}>Pipeline running</span>
+          </div>
+          <button type="button" className="btn btn-red" style={{ width:'100%', display:'flex', alignItems:'center', justifyContent:'center', gap:5 }}>
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+            Stop Pipeline
+          </button>
         </div>
-      </div>
-    </aside>
+      </aside>
     </>
   )
 }

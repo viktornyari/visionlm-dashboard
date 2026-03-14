@@ -102,3 +102,76 @@ export const PERSONAS = [
   { id: 'manager', label: 'Prod. Manager',     icon: 'M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z' },
   { id: 'maint',   label: 'Maintenance Lead',  icon: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6' },
 ]
+
+// ── SCADA v7 data ──────────────────────────────────────────
+
+export const S = {
+  bg:      '#1a1c1a',
+  panel:   '#222525',
+  panel2:  '#292c2c',
+  panel3:  '#313535',
+  border:  '#363a3a',
+  border2: '#484c4c',
+  t1:      '#dce0e0',
+  t2:      '#8c9696',
+  t3:      '#5a6262',
+  blue:    '#4A9ECC',
+  blueB:   'rgba(74,158,204,0.14)',
+  green:   '#5AB870',
+  greenB:  'rgba(90,184,112,0.10)',
+  amber:   '#D9940A',
+  amberB:  'rgba(217,148,10,0.12)',
+  red:     '#CC3C3C',
+  redB:    'rgba(204,60,60,0.12)',
+  mono:    "'JetBrains Mono','SF Mono','Courier New',monospace",
+}
+
+export const FACTORY_STATUS = {
+  workersActive:  12,
+  workersIdle:     3,
+  machinesOk:      8,
+  machinesStopped: 1,
+  alertsToday:     4,
+  shiftStart:   '06:00',
+  facility:     'Plant A — Warehouse',
+}
+
+export const EVENTS = [
+  { id:1, time:'14:41', type:'idle',    severity:'amber', msg:'Worker idle 8 min',        zone:'Zone 3',       cam:'CAM-04' },
+  { id:2, time:'14:38', type:'machine', severity:'red',   msg:'Machine stopped',           zone:'Conveyor 2',   cam:'CAM-02' },
+  { id:3, time:'14:35', type:'safety',  severity:'red',   msg:'Safety: no helmet detected',zone:'Assembly Line',cam:'CAM-05' },
+  { id:4, time:'14:29', type:'idle',    severity:'amber', msg:'Worker idle 12 min',        zone:'Zone 1',       cam:'CAM-01' },
+  { id:5, time:'14:22', type:'energy',  severity:'amber', msg:'Motor overload 97 kW',      zone:'Conveyor 1',   cam:'CAM-03' },
+  { id:6, time:'14:18', type:'idle',    severity:'amber', msg:'Worker idle 5 min',         zone:'Zone 3',       cam:'CAM-04' },
+  { id:7, time:'14:11', type:'safety',  severity:'red',   msg:'Forklift speed exceeded',   zone:'Exit Gate',    cam:'CAM-06' },
+  { id:8, time:'13:58', type:'machine', severity:'blue',  msg:'Conveyor 1 restarted',      zone:'Loading Dock', cam:'CAM-02' },
+  { id:9, time:'13:44', type:'idle',    severity:'amber', msg:'Break zone overstay',       zone:'Break Area',   cam:'CAM-01' },
+  { id:10,time:'13:31', type:'machine', severity:'green', msg:'All systems nominal',       zone:'All zones',    cam:'—'      },
+]
+
+export const CAMERAS = [
+  { id:'CAM-01', label:'Entrance',      status:'online',  rtsp:'rtsp://192.168.1.101:554', res:'1440p', thumb:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=320&q=65', alert:false },
+  { id:'CAM-02', label:'Loading Dock',  status:'online',  rtsp:'rtsp://192.168.1.102:554', res:'1080p', thumb:'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=320&q=65', alert:true  },
+  { id:'CAM-03', label:'Conveyor Line', status:'online',  rtsp:'rtsp://192.168.1.103:554', res:'1080p', thumb:'https://images.unsplash.com/photo-1553413077-190dd305871c?w=320&q=65', alert:false },
+  { id:'CAM-04', label:'Warehouse A',   status:'online',  rtsp:'rtsp://192.168.1.104:554', res:'1440p', thumb:'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=320&q=65', alert:true  },
+  { id:'CAM-05', label:'Assembly Line', status:'offline', rtsp:'rtsp://192.168.1.105:554', res:'1080p', thumb:'', alert:false },
+  { id:'CAM-06', label:'Exit Gate',     status:'online',  rtsp:'rtsp://192.168.1.106:554', res:'2K',    thumb:'https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?w=320&q=65', alert:false },
+]
+
+export const WORKERS_SCOREBOARD = [
+  { id:1, name:'János Tóth',    role:'Technician', productive:91, idle:9,  rag:'green', zone:'Assembly Line' },
+  { id:2, name:'András Fekete', role:'Forklift Op',productive:88, idle:12, rag:'green', zone:'Exit Gate'     },
+  { id:3, name:'Marta Szabó',   role:'Loader',     productive:72, idle:28, rag:'green', zone:'Loading Dock'  },
+  { id:4, name:'Réka Molnár',   role:'Supervisor', productive:67, idle:33, rag:'amber', zone:'Warehouse A'   },
+  { id:5, name:'Péter Varga',   role:'Operator',   productive:44, idle:56, rag:'amber', zone:'Entrance'      },
+  { id:6, name:'Dávid Kovács',  role:'Operator',   productive:5,  idle:95, rag:'red',   zone:'Warehouse A'   },
+]
+
+export const MACHINES = [
+  { id:'M-01', name:'Conveyor 1',    status:'running', load:82, kw:74, zone:'Loading Dock',  uptime:'6h 14m' },
+  { id:'M-02', name:'Conveyor 2',    status:'stopped', load:0,  kw:0,  zone:'Loading Dock',  uptime:'—'      },
+  { id:'M-03', name:'Shredder A',    status:'running', load:91, kw:91, zone:'Zone 1',         uptime:'4h 52m' },
+  { id:'M-04', name:'Press Line 1',  status:'running', load:64, kw:58, zone:'Assembly Line', uptime:'7h 01m' },
+  { id:'M-05', name:'Compactor',     status:'warning', load:97, kw:108,zone:'Zone 3',         uptime:'3h 20m' },
+  { id:'M-06', name:'Forklift #2',   status:'running', load:55, kw:12, zone:'Exit Gate',      uptime:'2h 40m' },
+]
