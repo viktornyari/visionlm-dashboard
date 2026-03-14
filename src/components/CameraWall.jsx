@@ -28,7 +28,7 @@ function CamTile({ cam }) {
       <div style={{ position:'absolute', inset:0, backgroundImage:'repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.04) 3px,rgba(0,0,0,0.04) 4px)', pointerEvents:'none' }}/>
 
       {/* Alert flash border */}
-      {hasAlert && <div style={{ position:'absolute', inset:0, border:'2px solid rgba(204,60,60,0.7)', borderRadius:3, pointerEvents:'none', animation:'blink 1.2s ease-in-out infinite' }}/>}
+      {hasAlert && <div style={{ position:'absolute', inset:0, border:'2px solid rgba(204,60,60,0.7)', borderRadius:3, pointerEvents:'none', animation:'blink 1.2s step-end infinite' }}/>}
 
       {/* Status badge */}
       <div style={{ position:'absolute', top:5, right:5, display:'flex', alignItems:'center', gap:4, padding:'2px 7px', background:'rgba(0,0,0,0.72)', borderRadius:2 }}>
@@ -77,7 +77,7 @@ export default function CameraWall() {
         <div style={{ display:'flex', alignItems:'center', gap:10 }}>
           <span style={{ fontSize:10, color:S.green }}>{online} online</span>
           {offline > 0 && <span style={{ fontSize:10, color:S.red }}>{offline} offline</span>}
-          {alerts  > 0 && <span style={{ fontSize:10, color:S.red, animation:'blink 1.2s ease-in-out infinite' }}>{alerts} alerts</span>}
+          {alerts  > 0 && <span style={{ fontSize:10, color:S.red, animation:'blink 1.2s step-end infinite' }}>{alerts} alerts</span>}
           <button type="button" className="btn btn-blue" style={{ fontSize:10, padding:'3px 9px' }}>Full Screen</button>
         </div>
       </div>

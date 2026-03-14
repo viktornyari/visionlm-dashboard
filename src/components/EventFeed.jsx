@@ -55,7 +55,7 @@ export default function EventFeed() {
               onMouseLeave={e => e.currentTarget.style.background = i === 0 && ev.severity === 'red' ? 'rgba(204,60,60,0.04)' : 'transparent'}>
 
               {/* Severity dot */}
-              <div style={{ width:6, height:6, borderRadius:'50%', background:color, flexShrink:0, marginTop:4, boxShadow: ev.severity==='red' ? `0 0 5px ${color}` : 'none', animation: ev.severity==='red' && i===0 ? 'blink 1.2s ease-in-out infinite' : 'none' }}/>
+              <div style={{ width:6, height:6, borderRadius:'50%', background:color, flexShrink:0, marginTop:4, boxShadow: ev.severity==='red' ? `0 0 5px ${color}` : 'none', animation: ev.severity==='red' && i===0 ? 'blink 1.2s step-end infinite' : 'none' }}/>
 
               {/* Content */}
               <div style={{ flex:1, minWidth:0 }}>
