@@ -3,11 +3,12 @@ import { ROWS, BDG, AC, AMB, RED, t1, t2, t3, t4, t5, bd, bd2, CARD2 } from '../
 
 const HDR = ['Rank', 'Person', 'Activity', 'Zone', 'Duration', 'Productivity', 'Camera', 'Last Action', '']
 
-export default function ActivityTable() {
+export default function ActivityTable({ highlight }) {
   const [sel, setSel] = useState(null)
+  const hl = { outline: highlight ? '1px solid rgba(0,206,176,0.28)' : 'none', boxShadow: highlight ? '0 0 0 3px rgba(0,206,176,0.07)' : 'none', transition: 'outline 0.3s, box-shadow 0.3s' }
 
   return (
-    <div className="glass" style={{ overflow: 'hidden' }}>
+    <div className="glass" style={{ overflow: 'hidden', ...hl }}>
       <div
         style={{
           display: 'flex',

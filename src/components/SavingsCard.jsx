@@ -3,9 +3,10 @@ import OeeRing from './OeeRing'
 import LineChart from './LineChart'
 import { AC, ACB, AC2, AMB, t1, t2, t3, t4, bd } from '../constants'
 
-export default function SavingsCard() {
+export default function SavingsCard({ highlight }) {
   const [val, setVal] = useState(0)
   const [chartMode, setChartMode] = useState('total')
+  const hl = { outline: highlight ? '1px solid rgba(0,206,176,0.2)' : 'none', borderRadius: 14, transition: 'outline 0.3s' }
 
   useEffect(() => {
     const tgt = 8200000
@@ -22,7 +23,7 @@ export default function SavingsCard() {
   }, [])
 
   return (
-    <div className="savings-grid">
+    <div className="savings-grid" style={hl}>
       {/* Card 1: Savings Value */}
       <div className="glass" style={{ padding: 18 }}>
         <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 13, fontWeight: 700, color: t1, marginBottom: 2 }}>

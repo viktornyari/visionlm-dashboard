@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { WK, t1, t3, t4, t5, bd, bd2, CARD2 } from '../constants'
 
-export default function WorkersCard() {
+export default function WorkersCard({ highlight }) {
   const [page, setPage] = useState(0)
   const vis = WK.slice(page * 2, page * 2 + 2)
+  const hl = { outline: highlight ? '1px solid rgba(0,206,176,0.28)' : 'none', boxShadow: highlight ? '0 0 0 3px rgba(0,206,176,0.07)' : 'none', transition: 'outline 0.3s, box-shadow 0.3s' }
 
   return (
-    <div className="glass" style={{ padding: '14px 16px' }}>
+    <div className="glass" style={{ padding: '14px 16px', ...hl }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 11 }}>
         <div>
           <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1 }}>Active Workers</div>

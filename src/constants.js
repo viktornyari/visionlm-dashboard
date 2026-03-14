@@ -70,3 +70,35 @@ export const CHART_DS = {
 }
 
 export const CHART_LABELS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+export const MACHINE_DATA = {
+  activePercent: 73,
+  currentKw: 91,
+  expectedKw: 95,
+  overloadEvents: 2,
+  sparkKw: [88, 91, 85, 94, 110, 96, 91, 87, 93, 91],
+}
+
+export const GATING_DATA = {
+  level1: { count: 847, label: 'Auto-validated', threshold: '>0.85', color: '#00CEB0' },
+  level2: { count: 38,  label: 'Ambiguity filter', threshold: '0.5–0.85', color: '#F0A832' },
+  level3: { count: 14,  label: 'LLM escalated', threshold: '<0.5', color: '#A97DFF' },
+  tokenSaved: 82,
+  totalEvents: 899,
+}
+
+export const LOSS_SOURCES = [
+  { rank: 1, desc: 'Standing idle — Warehouse A', events: 47, zone: 'Warehouse A', ftPerMonth: 84000, trend: 'up' },
+  { rank: 2, desc: 'Unplanned machine stop', events: 12, zone: 'Assembly Line', ftPerMonth: 62000, trend: 'dn' },
+  { rank: 3, desc: 'Forklift detour pattern', events: null, zone: 'Exit Gate', extra: '8.4 km extra', ftPerMonth: 31000, trend: 'dn' },
+  { rank: 4, desc: 'Conveyor underloading', events: null, zone: 'Loading Dock', extra: '34% of time', ftPerMonth: 28000, trend: 'up' },
+  { rank: 5, desc: 'Shift overlap idle', events: 22, zone: 'Entrance', ftPerMonth: 18000, trend: 'st' },
+]
+
+export const ROI_DEFAULTS = { headcount: 30, avgWage: 600000, shifts: 1, idlePct: 5, improvePct: 3 }
+
+export const PERSONAS = [
+  { id: 'owner',   label: 'Owner / CEO',      icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' },
+  { id: 'manager', label: 'Prod. Manager',     icon: 'M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z' },
+  { id: 'maint',   label: 'Maintenance Lead',  icon: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6' },
+]

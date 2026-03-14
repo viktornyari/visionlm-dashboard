@@ -233,17 +233,21 @@ export default function InsightsPanel() {
             justifyContent: 'space-between',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: 10.5, fontWeight: 500, color: AC }}>
-            <div
-              style={{
-                width: 6,
-                height: 6,
-                borderRadius: '50%',
-                background: AC,
-                animation: 'pglow 2s ease-in-out infinite',
-              }}
-            />
-            Pipeline running
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: 10.5, fontWeight: 500, color: AC }}>
+              <div style={{ width: 6, height: 6, borderRadius: '50%', background: AC, animation: 'pglow 2s ease-in-out infinite' }} />
+              Pipeline running
+            </div>
+            <button type="button"
+              title="Shift report generation — Milestone 5"
+              style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '4px 9px', background: 'rgba(255,255,255,0.025)', border: '1px dashed rgba(255,255,255,0.09)', borderRadius: 6, color: 'rgba(255,255,255,0.25)', fontSize: 9.5, fontWeight: 500, cursor: 'not-allowed', opacity: 0.75 }}>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+              Generate Shift Report
+              <span style={{ fontSize: 7.5, padding: '1px 4px', background: 'rgba(240,168,50,0.12)', border: '1px solid rgba(240,168,50,0.22)', borderRadius: 3, color: '#F0A832', marginLeft: 2 }}>M5</span>
+            </button>
           </div>
           <button
             type="button"

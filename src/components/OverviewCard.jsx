@@ -2,11 +2,12 @@ import { useState } from 'react'
 import LineChart from './LineChart'
 import { t1, t2, t3, t4, t5, bd, CARD2, ACB, AC2, AC, AMB } from '../constants'
 
-export default function OverviewCard() {
+export default function OverviewCard({ highlight }) {
   const [tab, setTab] = useState('Week')
+  const hl = { outline: highlight ? '1px solid rgba(0,206,176,0.28)' : 'none', boxShadow: highlight ? '0 0 0 3px rgba(0,206,176,0.07)' : 'none', transition: 'outline 0.3s, box-shadow 0.3s' }
 
   return (
-    <div className="glass" style={{ padding: 16 }}>
+    <div className="glass" style={{ padding: 16, ...hl }}>
       <div className="glass-inner" style={{ padding: 14, marginBottom: 12 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
           <div>

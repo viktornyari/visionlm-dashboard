@@ -163,6 +163,46 @@ button {
   transform: scale(0.98);
 }
 
+/* ── Custom range slider thumb ── */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #00CEB0;
+  border: 2px solid rgba(3,4,5,0.95);
+  box-shadow: 0 0 8px rgba(0,206,176,0.55);
+  transition: transform 0.15s;
+  cursor: pointer;
+}
+input[type='range']::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+input[type='range']::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #00CEB0;
+  border: 2px solid rgba(3,4,5,0.95);
+  cursor: pointer;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 2px;
+}
+input[type='range']::-moz-range-track {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.07);
+}
+
+
 /* ----- Responsive layout ----- */
 .dashboard-main {
   margin-left: 56px;
@@ -185,7 +225,7 @@ button {
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: minmax(260px, 300px) 1fr minmax(220px, 280px);
+  grid-template-columns: minmax(250px, 290px) 1fr minmax(230px, 268px);
   grid-template-areas: 'left middle right';
   gap: 12px;
   align-items: start;
