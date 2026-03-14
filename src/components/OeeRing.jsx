@@ -40,7 +40,7 @@ export default function OeeRing({ pct = 87, sz = 144 }) {
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
         <span
           style={{
-            fontFamily: "'IBM Plex Sans',sans-serif",
+            fontFamily: "'Outfit',sans-serif",
             fontSize: 26,
             fontWeight: 800,
             color: t1,

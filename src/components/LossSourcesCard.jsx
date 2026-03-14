@@ -25,7 +25,7 @@ export default function LossSourcesCard({ highlight }) {
     <div className="glass" style={{ overflow: 'hidden', ...hl }}>
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '13px 16px 10px', borderBottom: `1px solid ${bd}` }}>
-        <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1, display: 'flex', alignItems: 'center', gap: 6 }}>
+        <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1, display: 'flex', alignItems: 'center', gap: 6 }}>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={RED} strokeWidth="2" strokeLinecap="round">
             <circle cx="12" cy="12" r="10"/>
             <line x1="12" y1="8" x2="12" y2="12"/>
@@ -35,7 +35,7 @@ export default function LossSourcesCard({ highlight }) {
         </div>
         <div style={{ textAlign: 'right' }}>
           <div style={{ fontSize: 8.5, color: t4, textTransform: 'uppercase', letterSpacing: 0.4 }}>Total / month</div>
-          <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 13, fontWeight: 700, color: RED }}>{total.toLocaleString()} Ft</div>
+          <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 13, fontWeight: 700, color: RED }}>{total.toLocaleString()} Ft</div>
         </div>
       </div>
 
@@ -51,7 +51,7 @@ export default function LossSourcesCard({ highlight }) {
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 9 }}>
               {/* Rank badge */}
               <div style={{ width: 18, height: 18, borderRadius: 5, background: i === 0 ? 'rgba(255,96,96,0.12)' : CARD2, border: `1px solid ${i === 0 ? 'rgba(255,96,96,0.22)' : bd}`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
-                <span style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 9, fontWeight: 700, color: i === 0 ? RED : t4 }}>{loss.rank}</span>
+                <span style={{ fontFamily: "'Outfit',sans-serif", fontSize: 9, fontWeight: 700, color: i === 0 ? RED : t4 }}>{loss.rank}</span>
               </div>
 
               {/* Content */}
@@ -62,7 +62,7 @@ export default function LossSourcesCard({ highlight }) {
                   </span>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>
                     <Arrow dir={loss.trend}/>
-                    <span style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 11.5, fontWeight: 700, color: RED }}>
+                    <span style={{ fontFamily: "'Outfit',sans-serif", fontSize: 11.5, fontWeight: 700, color: RED }}>
                       {loss.ftPerMonth.toLocaleString()} Ft
                     </span>
                   </div>

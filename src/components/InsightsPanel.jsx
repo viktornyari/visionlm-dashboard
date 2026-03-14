@@ -60,7 +60,7 @@ export default function InsightsPanel() {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={AC} strokeWidth="2">
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
             </svg>
-            <span style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1 }}>ROI Active Now!</span>
+            <span style={{ fontFamily: "'Outfit',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1 }}>ROI Active Now!</span>
           </div>
           <div style={{ fontSize: 10.5, color: t2, lineHeight: 1.6, marginBottom: 10 }}>
             Facility saving&nbsp;
@@ -104,7 +104,7 @@ export default function InsightsPanel() {
             borderBottom: '1px solid rgba(255,255,255,0.05)',
           }}
         >
-          <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1 }}>AI Modules</div>
+          <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1 }}>AI Modules</div>
           <div
             style={{
               display: 'flex',
@@ -161,7 +161,7 @@ export default function InsightsPanel() {
               onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.025)')}
               onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
             >
-              <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 11.5, fontWeight: 700, color: t4 }}>#{m.rank}</div>
+              <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 11.5, fontWeight: 700, color: t4 }}>#{m.rank}</div>
               <div style={{ minWidth: 0 }}>
                 <div
                   style={{
@@ -198,7 +198,7 @@ export default function InsightsPanel() {
                   <span style={{ fontSize: 9.5, color: t2, fontWeight: 500, whiteSpace: 'nowrap' }}>{m.date}</span>
                 </div>
               </div>
-              <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 10.5, fontWeight: 600, color: t2, whiteSpace: 'nowrap' }}>
+              <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 10.5, fontWeight: 600, color: t2, whiteSpace: 'nowrap' }}>
                 {m.metric}
               </div>
               <button
@@ -212,7 +212,7 @@ export default function InsightsPanel() {
                   fontSize: 9.5,
                   fontWeight: 600,
                   cursor: 'pointer',
-                  fontFamily: "'IBM Plex Sans',sans-serif",
+                  fontFamily: "'DM Sans',sans-serif",
                   transition: 'all 0.13s',
                   whiteSpace: 'nowrap',
                 }}

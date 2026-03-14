@@ -31,7 +31,7 @@ export default function MachineOeeCard({ highlight }) {
       <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:12 }}>
         <div style={{ display:'flex', alignItems:'center', gap:6 }}>
           <div style={{ width:5, height:5, borderRadius:'50%', background:AMB, boxShadow:`0 0 6px ${AMB}` }}/>
-          <span style={{ fontFamily:"'IBM Plex Sans',sans-serif", fontSize:12.5, fontWeight:700, color:t1 }}>Machine OEE</span>
+          <span style={{ fontFamily:"'Outfit',sans-serif", fontSize:12.5, fontWeight:700, color:t1 }}>Machine OEE</span>
         </div>
         <span style={{ fontSize:9, color:t4, textTransform:'uppercase', letterSpacing:0.8 }}>IoT · Shelly 3EM</span>
       </div>
@@ -39,7 +39,7 @@ export default function MachineOeeCard({ highlight }) {
       <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:8, marginBottom:10 }}>
         <div style={{ background:CARD2, border:`1px solid ${bd}`, borderRadius:9, padding:'10px 11px' }}>
           <div style={{ fontSize:8.5, color:t4, textTransform:'uppercase', letterSpacing:0.5, marginBottom:4 }}>Machine Active</div>
-          <div style={{ fontFamily:"'IBM Plex Sans',sans-serif", fontSize:24, fontWeight:800, color: activePercent>=75?AC:AMB, lineHeight:1 }}>{activePercent}%</div>
+          <div style={{ fontFamily:"'Outfit',sans-serif", fontSize:24, fontWeight:800, color: activePercent>=75?AC:AMB, lineHeight:1 }}>{activePercent}%</div>
           <div style={{ height:3, background:'rgba(255,255,255,0.06)', borderRadius:2, overflow:'hidden', marginTop:6 }}>
             <div style={{ height:'100%', width:`${activePercent}%`, background:activePercent>=75?AC:AMB, borderRadius:2, transition:'width 1.2s ease' }}/>
           </div>
@@ -48,7 +48,7 @@ export default function MachineOeeCard({ highlight }) {
         <div style={{ background:CARD2, border:`1px solid ${bd}`, borderRadius:9, padding:'10px 11px' }}>
           <div style={{ fontSize:8.5, color:t4, textTransform:'uppercase', letterSpacing:0.5, marginBottom:4 }}>Motor Load</div>
           <div style={{ display:'flex', alignItems:'baseline', gap:3 }}>
-            <span style={{ fontFamily:"'IBM Plex Sans',sans-serif", fontSize:24, fontWeight:800, color:AMB, lineHeight:1 }}>{currentKw}</span>
+            <span style={{ fontFamily:"'Outfit',sans-serif", fontSize:24, fontWeight:800, color:AMB, lineHeight:1 }}>{currentKw}</span>
             <span style={{ fontSize:11, color:t4 }}>kW</span>
           </div>
           <div style={{ height:3, background:'rgba(255,255,255,0.06)', borderRadius:2, overflow:'hidden', marginTop:6 }}>
@@ -66,7 +66,7 @@ export default function MachineOeeCard({ highlight }) {
       <div style={{ display:'flex', gap:7, paddingTop:8, borderTop:`1px solid ${bd}` }}>
         <div style={{ flex:1, padding:'6px 8px', background:overloadEvents>0?'rgba(255,96,96,0.07)':CARD2, border:`1px solid ${overloadEvents>0?'rgba(255,96,96,0.2)':bd}`, borderRadius:7 }}>
           <div style={{ fontSize:8, color:t4, textTransform:'uppercase', letterSpacing:0.5, marginBottom:2 }}>Overload Events</div>
-          <div style={{ fontFamily:"'IBM Plex Sans',sans-serif", fontSize:15, fontWeight:800, color:overloadEvents>0?RED:AC }}>{overloadEvents} <span style={{ fontSize:9, fontWeight:400, color:t4 }}>today</span></div>
+          <div style={{ fontFamily:"'Outfit',sans-serif", fontSize:15, fontWeight:800, color:overloadEvents>0?RED:AC }}>{overloadEvents} <span style={{ fontSize:9, fontWeight:400, color:t4 }}>today</span></div>
         </div>
         <div style={{ flex:1, padding:'6px 8px', background:CARD2, border:`1px solid ${bd}`, borderRadius:7 }}>
           <div style={{ fontSize:8, color:t4, textTransform:'uppercase', letterSpacing:0.5, marginBottom:2 }}>Motor Protection</div>
@@ -77,7 +77,7 @@ export default function MachineOeeCard({ highlight }) {
         </div>
         <div style={{ flex:1.4, padding:'6px 8px', background:CARD2, border:`1px solid ${bd}`, borderRadius:7 }}>
           <div style={{ fontSize:8, color:t4, textTransform:'uppercase', letterSpacing:0.5, marginBottom:2 }}>Patterns learned</div>
-          <div style={{ fontFamily:"'IBM Plex Sans',sans-serif", fontSize:15, fontWeight:700, color:AC2 }}>1,247</div>
+          <div style={{ fontFamily:"'Outfit',sans-serif", fontSize:15, fontWeight:700, color:AC2 }}>1,247</div>
         </div>
       </div>
 

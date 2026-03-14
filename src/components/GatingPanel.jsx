@@ -14,7 +14,7 @@ export default function GatingPanel({ highlight }) {
     <div className="glass" style={{ padding: '13px 15px', ...hl }}>
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 11 }}>
-        <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1, display: 'flex', alignItems: 'center', gap: 6 }}>
+        <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1, display: 'flex', alignItems: 'center', gap: 6 }}>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={ACB} strokeWidth="2" strokeLinecap="round">
             <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
             <path d="M19.07 4.93l-1.41 1.41M3.52 19.07l1.41-1.41M4.93 4.93l1.41 1.41M19.07 19.07l-1.41-1.41M12 2v2M12 20v2M2 12h2M20 12h2" />
@@ -33,13 +33,13 @@ export default function GatingPanel({ highlight }) {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 3 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
                   <div style={{ width: 14, height: 14, borderRadius: 4, background: `${lv.color}18`, border: `1px solid ${lv.color}44`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <span style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 8, fontWeight: 800, color: lv.color }}>L{i + 1}</span>
+                    <span style={{ fontFamily: "'Outfit',sans-serif", fontSize: 8, fontWeight: 800, color: lv.color }}>L{i + 1}</span>
                   </div>
                   <span style={{ fontSize: 10, color: t2 }}>{lv.label}</span>
                   <span style={{ fontSize: 8.5, color: t4 }}>{lv.threshold}</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
-                  <span style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 12, fontWeight: 700, color: lv.color }}>{lv.count}</span>
+                  <span style={{ fontFamily: "'Outfit',sans-serif", fontSize: 12, fontWeight: 700, color: lv.color }}>{lv.count}</span>
                   <span style={{ fontSize: 9, color: t4 }}>{pct}%</span>
                 </div>
               </div>
@@ -55,7 +55,7 @@ export default function GatingPanel({ highlight }) {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '9px 11px', background: 'rgba(0,206,176,0.05)', border: '1px solid rgba(0,206,176,0.13)', borderRadius: 8 }}>
         <div>
           <div style={{ fontSize: 8.5, color: t4, textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 2 }}>Token cost saved</div>
-          <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 18, fontWeight: 800, color: ACB }}>~{tokenSaved}%</div>
+          <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 18, fontWeight: 800, color: ACB }}>~{tokenSaved}%</div>
         </div>
         <div style={{ textAlign: 'right', fontSize: 9, color: t4, lineHeight: 1.55, maxWidth: 112 }}>
           Only ambiguous frames reach the LLM — not raw streams

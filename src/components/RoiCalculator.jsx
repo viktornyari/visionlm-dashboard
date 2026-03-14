@@ -55,7 +55,7 @@ export default function RoiCalculator({ highlight }) {
     <div className="glass" style={{ padding: '14px 16px', ...hl }}>
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-        <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1, display: 'flex', alignItems: 'center', gap: 6 }}>
+        <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1, display: 'flex', alignItems: 'center', gap: 6 }}>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={AC} strokeWidth="2" strokeLinecap="round">
             <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
           </svg>
@@ -78,12 +78,12 @@ export default function RoiCalculator({ highlight }) {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 7, marginBottom: 9 }}>
         <div style={{ background: 'rgba(255,96,96,0.05)', border: '1px solid rgba(255,96,96,0.13)', borderRadius: 8, padding: '8px 10px' }}>
           <div style={{ fontSize: 8.5, color: t4, textTransform: 'uppercase', letterSpacing: 0.4, marginBottom: 3 }}>Hidden loss / mo</div>
-          <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 16, fontWeight: 800, color: RED, lineHeight: 1 }}>{fmt(lostMonth)} Ft</div>
+          <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 16, fontWeight: 800, color: RED, lineHeight: 1 }}>{fmt(lostMonth)} Ft</div>
           <div style={{ fontSize: 8.5, color: t4, marginTop: 2 }}>at {idle}% idle</div>
         </div>
         <div style={{ background: 'rgba(0,206,176,0.05)', border: '1px solid rgba(0,206,176,0.16)', borderRadius: 8, padding: '8px 10px' }}>
           <div style={{ fontSize: 8.5, color: t4, textTransform: 'uppercase', letterSpacing: 0.4, marginBottom: 3 }}>Recoverable / mo</div>
-          <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 16, fontWeight: 800, color: AC, lineHeight: 1 }}>{fmt(savedMonth)} Ft</div>
+          <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 16, fontWeight: 800, color: AC, lineHeight: 1 }}>{fmt(savedMonth)} Ft</div>
           <div style={{ fontSize: 8.5, color: t4, marginTop: 2 }}>at {impr}% gain</div>
         </div>
       </div>
@@ -92,13 +92,13 @@ export default function RoiCalculator({ highlight }) {
       <div style={{ background: 'rgba(0,206,176,0.05)', border: '1px solid rgba(0,206,176,0.16)', borderRadius: 10, padding: '11px 13px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div>
           <div style={{ fontSize: 8.5, color: t4, textTransform: 'uppercase', letterSpacing: 0.6, marginBottom: 3 }}>Annual saving</div>
-          <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 14, fontWeight: 900, background: `linear-gradient(135deg,${ACB},${AC2})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1, whiteSpace: 'nowrap' }}>
+          <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 14, fontWeight: 900, background: `linear-gradient(135deg,${ACB},${AC2})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1, whiteSpace: 'nowrap' }}>
             + {savedYear.toLocaleString()} Ft
           </div>
         </div>
         <div style={{ textAlign: 'right' }}>
           <div style={{ fontSize: 8.5, color: t4, marginBottom: 2 }}>ROI payback</div>
-          <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 18, fontWeight: 800, color: roiMonths <= 12 ? AC : AMB }}>
+          <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 18, fontWeight: 800, color: roiMonths <= 12 ? AC : AMB }}>
             {roiMonths} mo
           </div>
           {roiMonths <= 12 && <div style={{ fontSize: 8, color: AC, marginTop: 1 }}>Under 12 months ✓</div>}
