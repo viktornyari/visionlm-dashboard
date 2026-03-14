@@ -185,7 +185,7 @@ button {
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: minmax(260px, 300px) 1fr minmax(220px, 256px);
+  grid-template-columns: minmax(260px, 300px) 1fr minmax(220px, 280px);
   grid-template-areas: 'left middle right';
   gap: 12px;
   align-items: start;
@@ -194,6 +194,7 @@ button {
 
 .dashboard-col-left {
   grid-area: left;
+  min-width: 0;
 }
 
 .dashboard-col-middle {
@@ -202,6 +203,7 @@ button {
 
 .dashboard-col-right {
   grid-area: right;
+  min-width: 0;
 }
 
 .savings-grid {
@@ -221,6 +223,10 @@ button {
     grid-template-areas:
       'left middle'
       'right right';
+  }
+
+  .dashboard-col-right {
+    max-width: 100%;
   }
 }
 

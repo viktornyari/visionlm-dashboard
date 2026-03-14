@@ -8,8 +8,8 @@ function statusStyle(s) {
 
 export default function InsightsPanel() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, height: '100%' }}>
-      <div className="glass" style={{ padding: 16 }}>
+    <div className="insights-panel" style={{ display: 'flex', flexDirection: 'column', gap: 12, minWidth: 0 }}>
+      <div className="glass" style={{ padding: 16, minWidth: 0 }}>
         <div
           style={{
             position: 'absolute',
@@ -94,7 +94,7 @@ export default function InsightsPanel() {
         </div>
       </div>
 
-      <div className="glass" style={{ padding: 0, overflow: 'hidden', flex: 1 }}>
+      <div className="glass insights-modules-card" style={{ padding: 0, minWidth: 0, overflow: 'visible' }}>
         <div
           style={{
             display: 'flex',
@@ -126,9 +126,10 @@ export default function InsightsPanel() {
           </div>
         </div>
         <div
+          className="insights-modules-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: '24px 1fr 56px 82px',
+            gridTemplateColumns: '24px minmax(0, 1fr) 56px 82px',
             gap: 6,
             padding: '6px 14px',
             background: 'rgba(255,255,255,0.015)',
@@ -146,9 +147,10 @@ export default function InsightsPanel() {
           return (
             <div
               key={i}
+              className="insights-modules-grid"
               style={{
                 display: 'grid',
-                gridTemplateColumns: '24px 1fr 56px 82px',
+                gridTemplateColumns: '24px minmax(0, 1fr) 56px 82px',
                 gap: 6,
                 padding: '9px 14px',
                 borderBottom: '1px solid rgba(255,255,255,0.03)',
@@ -169,7 +171,7 @@ export default function InsightsPanel() {
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
-                    maxWidth: 140,
+                    minWidth: 0,
                   }}
                 >
                   {m.name}
