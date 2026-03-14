@@ -209,63 +209,58 @@ input[type='range']::-moz-range-thumb { width: 11px; height: 11px; border-radius
 
 /* ══════════════════════════════════════════
    RESPONSIVE TABLE GRIDS
+   Key: change grid-template-columns at each
+   breakpoint — don't use display:none on
+   individual cells (breaks grid layout).
    ══════════════════════════════════════════ */
 
-/* Worker Scoreboard grid */
-.ws-grid {
+/* ── Worker Scoreboard ── */
+/* Full: Worker | Productive | Idle | Zone | Rank */
+.ws-hdr, .ws-row {
   display: grid;
-  grid-template-columns: minmax(130px,1fr) 82px 58px 70px 36px;
+  grid-template-columns: minmax(0,1fr) 84px 58px 72px 36px;
   gap: 0;
   align-items: center;
 }
+/* Medium: drop Zone */
+@media (max-width: 900px) {
+  .ws-hdr, .ws-row {
+    grid-template-columns: minmax(0,1fr) 84px 58px 0 36px;
+  }
+  .ws-col-zone { visibility: hidden; overflow: hidden; width: 0; padding: 0; }
+}
+/* Small: drop Idle + Zone */
+@media (max-width: 560px) {
+  .ws-hdr, .ws-row {
+    grid-template-columns: minmax(0,1fr) 72px 0 0 32px;
+  }
+  .ws-col-idle { visibility: hidden; overflow: hidden; width: 0; padding: 0; }
+  .ws-col-zone { visibility: hidden; overflow: hidden; width: 0; padding: 0; }
+}
 
-/* Machine Status grid */
-.ms-grid {
+/* ── Machine Status ── */
+/* Full: Machine | Status | Load | Power | Uptime */
+.ms-hdr, .ms-row {
   display: grid;
-  grid-template-columns: minmax(120px,1fr) 90px 130px 68px 64px;
+  grid-template-columns: minmax(0,1fr) 92px 130px 68px 62px;
   gap: 0;
   align-items: center;
 }
-
-/* ── Mobile: menu button shown ── */
-@media (max-width: 768px) {
-  .dashboard-menu-btn { display: flex !important; }
-
-  /* TopBar: tighter on mobile */
-  .dashboard-topbar-center { display: none !important; }
-
-  /* Worker scoreboard — drop Zone column on small screens */
-  .ws-grid {
-    grid-template-columns: minmax(100px,1fr) 70px 54px 0px 32px;
+/* Medium: drop Uptime */
+@media (max-width: 900px) {
+  .ms-hdr, .ms-row {
+    grid-template-columns: minmax(0,1fr) 92px 130px 68px 0;
   }
-  .ws-col-zone { display: none; }
-  .ws-col-3    { display: none; }
-
-  /* Machine Status — drop Power + Uptime on small screens */
-  .ms-grid {
-    grid-template-columns: minmax(100px,1fr) 80px 100px 0 0;
+  .ms-col-uptime { visibility: hidden; overflow: hidden; width: 0; padding: 0; }
+}
+/* Small: drop Power + Uptime */
+@media (max-width: 640px) {
+  .ms-hdr, .ms-row {
+    grid-template-columns: minmax(0,1fr) 88px 110px 0 0;
   }
-  .ms-col-power  { display: none; }
-  .ms-col-uptime { display: none; }
-  .ms-col-3      { display: none; }
-  .ms-col-4      { display: none; }
-  .ms-bar-wrap   { max-width: 50px; }
+  .ms-col-power  { visibility: hidden; overflow: hidden; width: 0; padding: 0; }
+  .ms-col-uptime { visibility: hidden; overflow: hidden; width: 0; padding: 0; }
 }
 
-@media (max-width: 480px) {
-  /* Even tighter: drop Idle column from worker scoreboard */
-  .ws-grid {
-    grid-template-columns: minmax(90px,1fr) 64px 0 0 32px;
-  }
-  .ws-col-2 { display: none; }
-
-  /* Machine: only name + status + load% */
-  .ms-grid {
-    grid-template-columns: minmax(90px,1fr) 76px 80px 0 0;
-  }
-}
-
-/* Dashboard menu button */
-.dashboard-menu-btn {
-  display: none;
-}
+/* Dashboard menu button — hidden by default, shown on mobile */
+.dashboard-menu-btn { display: none; }

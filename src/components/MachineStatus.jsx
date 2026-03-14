@@ -21,10 +21,12 @@ export default function MachineStatus() {
       </div>
 
       {/* Table header */}
-      <div className="ms-grid" style={{ padding:'5px 12px', background:S.panel2, borderBottom:`1px solid ${S.border}` }}>
-        {['Machine', 'Status', 'Load', 'Power', 'Uptime'].map((h, i) => (
-          <div key={i} className={`sec-label ms-col-${i}`} style={{ textAlign: i >= 2 ? 'right' : 'left' }}>{h}</div>
-        ))}
+      <div className="ms-hdr" style={{ padding:'5px 12px', background:S.panel2, borderBottom:`1px solid ${S.border}` }}>
+        <div className="sec-label">Machine</div>
+        <div className="sec-label">Status</div>
+        <div className="sec-label" style={{ textAlign:'right' }}>Load</div>
+        <div className="sec-label ms-col-power" style={{ textAlign:'right' }}>Power</div>
+        <div className="sec-label ms-col-uptime" style={{ textAlign:'right' }}>Uptime</div>
       </div>
 
       {MACHINES.map(m => {
@@ -33,7 +35,7 @@ export default function MachineStatus() {
         const bg    = sc==='teal' ? S.blueB : sc==='red' ? S.redB : S.amberB
         const bd    = sc==='teal' ? 'rgba(0,180,200,0.35)' : sc==='red' ? 'rgba(200,40,40,0.35)' : 'rgba(196,144,16,0.35)'
         return (
-          <div key={m.id} className="tbl-row ms-grid"
+          <div key={m.id} className="tbl-row ms-row"
             style={{ padding:'8px 12px', borderBottom:`1px solid rgba(255,255,255,0.03)`, alignItems:'center' }}>
 
             {/* Machine name + dot — no STATUS badge here on mobile, moved to its own column */}

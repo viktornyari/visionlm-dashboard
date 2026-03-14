@@ -1,13 +1,10 @@
 import { WORKERS_SCOREBOARD, S } from '../constants'
 
-// Responsive column definition — CSS var so we can override in media query
-const COLS = 'minmax(120px,1fr) 80px 64px 72px 36px'
-
 export default function WorkerScoreboard() {
   const sorted = [...WORKERS_SCOREBOARD].sort((a,b) => b.productive - a.productive)
 
   return (
-    <div className="panel ws-panel" style={{ overflow:'hidden' }}>
+    <div className="panel" style={{ overflow:'hidden' }}>
       <div className="panel-hd panel-hd-accent">
         <div style={{ display:'flex', alignItems:'center', gap:7 }}>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={S.blue} strokeWidth="2" strokeLinecap="round">
@@ -20,50 +17,52 @@ export default function WorkerScoreboard() {
       </div>
 
       {/* Column headers */}
-      <div className="ws-grid" style={{ padding:'5px 12px', background:S.panel2, borderBottom:`1px solid ${S.border}` }}>
-        {['Worker', 'Productive', 'Idle', 'Zone', 'Rank'].map((h, i) => (
-          <div key={i} className={`sec-label ws-col-${i}`} style={{ textAlign: i >= 1 ? 'right' : 'left' }}>{h}</div>
-        ))}
+      <div className="ws-hdr" style={{ padding:'5px 12px', background:S.panel2, borderBottom:`1px solid ${S.border}` }}>
+        <div className="sec-label">Worker</div>
+        <div className="sec-label ws-col-prod" style={{ textAlign:'right' }}>Productive</div>
+        <div className="sec-label ws-col-idle" style={{ textAlign:'right' }}>Idle</div>
+        <div className="sec-label ws-col-zone" style={{ textAlign:'right' }}>Zone</div>
+        <div className="sec-label" style={{ textAlign:'right' }}>Rank</div>
       </div>
 
       {sorted.map((w) => {
         const pColor = w.productive>=70 ? S.green : w.productive>=45 ? S.amber : S.red
         return (
-          <div key={w.id} className="tbl-row ws-grid"
+          <div key={w.id} className="tbl-row ws-row"
             style={{ padding:'8px 12px', borderBottom:`1px solid rgba(255,255,255,0.03)`, alignItems:'center' }}>
 
-            {/* Worker */}
-            <div style={{ display:'flex', alignItems:'center', gap:8, minWidth:0 }}>
+            {/* Worker — always shown */}
+            <div style={{ display:'flex', alignItems:'center', gap:8, minWidth:0, overflow:'hidden' }}>
               <img src={`https://i.pravatar.cc/56?img=${10+w.id}`} alt={w.name}
                 style={{ width:26, height:26, objectFit:'cover', border:`1px solid ${S.border2}`, flexShrink:0 }}
                 onError={e => e.currentTarget.style.display='none'}/>
-              <div style={{ minWidth:0, overflow:'hidden' }}>
+              <div style={{ minWidth:0 }}>
                 <div style={{ fontSize:12, fontWeight:500, color:S.t1, whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>{w.name}</div>
-                <div style={{ fontSize:9, color:S.t3, whiteSpace:'nowrap' }}>{w.role}</div>
+                <div style={{ fontSize:9, color:S.t3 }}>{w.role}</div>
               </div>
             </div>
 
-            {/* Productive */}
-            <div style={{ display:'flex', flexDirection:'column', alignItems:'flex-end', gap:3 }}>
+            {/* Productive — always shown */}
+            <div className="ws-col-prod" style={{ display:'flex', flexDirection:'column', alignItems:'flex-end', gap:3 }}>
               <span className="mono" style={{ fontSize:12, fontWeight:700, color:pColor }}>{w.productive}%</span>
-              <div style={{ width:'100%', height:3, background:S.panel3 }}>
+              <div style={{ width:60, height:3, background:S.panel3 }}>
                 <div style={{ height:'100%', width:`${w.productive}%`, background:pColor }}/>
               </div>
             </div>
 
-            {/* Idle */}
-            <div style={{ textAlign:'right' }}>
+            {/* Idle — hidden on small */}
+            <div className="ws-col-idle" style={{ textAlign:'right' }}>
               <span className="mono" style={{ fontSize:12, color:w.idle>=55?S.red:w.idle>=30?S.amber:S.t2 }}>{w.idle}%</span>
             </div>
 
-            {/* Zone */}
+            {/* Zone — hidden on small */}
             <div className="ws-col-zone" style={{ display:'flex', justifyContent:'flex-end' }}>
-              <span style={{ fontSize:9.5, color:S.t3, padding:'2px 5px', background:S.panel2, border:`1px solid ${S.border}`, whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis', maxWidth:68 }}>
+              <span style={{ fontSize:9.5, color:S.t3, padding:'2px 5px', background:S.panel2, border:`1px solid ${S.border}`, whiteSpace:'nowrap' }}>
                 {w.zone.split(' ')[0]}
               </span>
             </div>
 
-            {/* RAG */}
+            {/* RAG — always shown */}
             <div style={{ display:'flex', justifyContent:'flex-end' }}>
               <div className={`rag rag-${w.rag}`}/>
             </div>
