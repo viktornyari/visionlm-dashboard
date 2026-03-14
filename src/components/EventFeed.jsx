@@ -22,7 +22,7 @@ export default function EventFeed() {
         <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:8 }}>
           <div style={{ display:'flex', alignItems:'center', gap:7 }}>
             <div className="dot-red blink"/>
-            <span style={{ fontFamily:"'Outfit',sans-serif", fontSize:13, fontWeight:700, color:S.t1 }}>Event Feed</span>
+            <span style={{ fontFamily:"'IBM Plex Sans',sans-serif", fontSize:13, fontWeight:700, color:S.t1 }}>Event Feed</span>
           </div>
           <span className="mono" style={{ fontSize:10, color:S.t3 }}>{EVENTS.length} events</span>
         </div>
@@ -60,7 +60,7 @@ export default function EventFeed() {
               {/* Content */}
               <div style={{ flex:1, minWidth:0 }}>
                 <div style={{ display:'flex', alignItems:'center', gap:6, marginBottom:2 }}>
-                  <span className="mono" style={{ fontSize:11, fontWeight:600, color:S.t2, flexShrink:0 }}>{ev.time}</span>
+                  <span className="readout readout-sm" style={{ minWidth:44, fontSize:11 }}>{ev.time}</span>
                   <span style={{ padding:'1px 5px', borderRadius:2, background:bg, color, fontSize:8.5, fontWeight:700, letterSpacing:0.5, flexShrink:0 }}>
                     {SEV_LABEL[ev.severity]}
                   </span>

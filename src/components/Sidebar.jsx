@@ -30,7 +30,7 @@ export default function Sidebar({ active, setActive, sidebarOpen, setSidebarOpen
             <circle cx="12" cy="12" r="1" fill={S.blue} stroke="none"/>
           </svg>
           <div>
-            <div style={{ fontFamily:"'Outfit',sans-serif", fontSize:13, fontWeight:700, color:S.t1, lineHeight:1 }}>Vision LM</div>
+            <div style={{ fontFamily:"'IBM Plex Sans',sans-serif", fontSize:13, fontWeight:700, color:S.t1, lineHeight:1 }}>Vision LM</div>
             <div style={{ fontSize:8.5, color:S.t3, textTransform:'uppercase', letterSpacing:1.2, marginTop:2 }}>Industrial AI</div>
           </div>
         </div>

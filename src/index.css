@@ -7,15 +7,15 @@ html, body {
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   background: #0d1117;
   color: #e8eef4;
   overflow: hidden;
 }
 
 #root { height: 100vh; display: flex; }
-button { font-family: 'DM Sans', sans-serif; cursor: pointer; }
-input  { font-family: 'DM Sans', sans-serif; }
+button { font-family: 'IBM Plex Sans', sans-serif; cursor: pointer; }
+input  { font-family: 'IBM Plex Sans', sans-serif; }
 
 /* ── Scrollbar — WinCC style dark ── */
 ::-webkit-scrollbar { width: 4px; height: 4px; }
@@ -53,7 +53,7 @@ input  { font-family: 'DM Sans', sans-serif; }
   border: 1px solid #2a3d52;
   border-radius: 0;
   padding: 3px 8px;
-  font-family: 'JetBrains Mono','SF Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','JetBrains Mono','Courier New',monospace;
   font-size: 13px;
   font-weight: 600;
   color: #e8eef4;
@@ -114,7 +114,7 @@ input  { font-family: 'DM Sans', sans-serif; }
 .btn {
   border: 1px solid #2a3d52; border-radius: 0;
   background: transparent; color: #7a96aa;
-  font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+  font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; font-weight: 500;
   padding: 4px 10px; cursor: pointer; transition: all 0.1s;
 }
 .btn:hover     { border-color: #3a5068; color: #e8eef4; background: #1a2535; }
@@ -131,7 +131,7 @@ input[type='range']::-moz-range-track { height: 3px; background: #1e2a3a; }
 input[type='range']::-moz-range-thumb { width: 11px; height: 11px; border-radius: 0; background: #00B4C8; border: 1px solid #0d1117; }
 
 /* ── Utilities ── */
-.mono      { font-family: 'JetBrains Mono','SF Mono','Courier New',monospace; }
+.mono      { font-family: 'IBM Plex Mono','JetBrains Mono','SF Mono','Courier New',monospace; }
 .sec-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #445a6a; }
 
 /* ══════════════════════════════════════════
@@ -204,4 +204,82 @@ input[type='range']::-moz-range-thumb { width: 11px; height: 11px; border-radius
 @media (max-width: 640px) {
   .camera-grid { grid-template-columns: repeat(2,1fr); }
   .dashboard-scroll { padding: 6px 6px 30px; }
+}
+
+/* ══════════════════════════════════════════
+   READOUT FIELDS — WinCC instrument display
+   The most recognisable WinCC visual pattern.
+   Dark bg, bordered box, monospace value.
+   ══════════════════════════════════════════ */
+
+/* Base readout — mimics a digital instrument display */
+.readout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #080c12;
+  border: 1px solid #2a3d52;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+  padding: 2px 7px 2px 9px;
+  font-family: 'IBM Plex Mono','JetBrains Mono','Courier New',monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: #e8eef4;
+  min-width: 58px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/* Size variants */
+.readout-sm {
+  font-size: 11px;
+  min-width: 44px;
+  padding: 1px 6px 1px 7px;
+}
+.readout-lg {
+  font-size: 18px;
+  font-weight: 600;
+  min-width: 72px;
+  padding: 3px 10px 3px 12px;
+}
+.readout-xl {
+  font-size: 28px;
+  font-weight: 700;
+  min-width: 90px;
+  padding: 4px 12px 4px 14px;
+  letter-spacing: -0.5px;
+}
+
+/* Color states on readout */
+.readout-teal  { color: #00B4C8; border-color: rgba(0,180,200,0.4); }
+.readout-green { color: #28A050; border-color: rgba(40,160,80,0.35); }
+.readout-amber { color: #C49010; border-color: rgba(196,144,16,0.4); }
+.readout-red   { color: #C82828; border-color: rgba(200,40,40,0.45); }
+
+/* Readout with label — stacked unit below value */
+.readout-unit {
+  font-size: 9px;
+  color: #445a6a;
+  margin-left: 4px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  align-self: flex-end;
+  padding-bottom: 3px;
+}
+
+/* Inline readout row — label : value pattern */
+.readout-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.035);
+}
+.readout-row:last-child { border-bottom: none; }
+.readout-row-label {
+  font-size: 10.5px;
+  color: #7a96aa;
+  font-weight: 400;
+  white-space: nowrap;
 }

@@ -18,7 +18,7 @@ export default function ActivityTable({ highlight }) {
           borderBottom: '1px solid rgba(255,255,255,0.05)',
         }}
       >
-        <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 12, fontWeight: 700, color: t1, display: 'flex', alignItems: 'center', gap: 5 }}>
+        <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 12, fontWeight: 700, color: t1, display: 'flex', alignItems: 'center', gap: 5 }}>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={AC} strokeWidth="2" strokeLinecap="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
             <circle cx="9" cy="7" r="4" />
@@ -63,7 +63,7 @@ export default function ActivityTable({ highlight }) {
                 color: t1,
                 fontSize: 11,
                 width: 90,
-                fontFamily: "'DM Sans',sans-serif",
+                fontFamily: "'IBM Plex Sans',sans-serif",
               }}
             />
           </div>
@@ -110,7 +110,7 @@ export default function ActivityTable({ highlight }) {
                   }}
                 >
                   <td style={{ padding: '4px 10px', paddingLeft: 14 }}>
-                    <span style={{ fontFamily: "'Outfit',sans-serif", fontSize: 11.5, fontWeight: 700, color: t4 }}>#{r.rank}</span>
+                    <span style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 11.5, fontWeight: 700, color: t4 }}>#{r.rank}</span>
                   </td>
                   <td style={{ padding: '4px 10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
@@ -164,7 +164,7 @@ export default function ActivityTable({ highlight }) {
                   </td>
                   <td style={{ padding: '4px 10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
-                      <span style={{ fontFamily: "'Outfit',sans-serif", fontSize: 11.5, fontWeight: 800, color: pc }}>{r.prod}%</span>
+                      <span style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 11.5, fontWeight: 800, color: pc }}>{r.prod}%</span>
                       <div style={{ width: 32, height: 2, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
                         <div style={{ height: '100%', width: `${r.prod}%`, background: pc, borderRadius: 2 }} />
                       </div>

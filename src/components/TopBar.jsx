@@ -36,7 +36,7 @@ export default function TopBar({ onMenuClick }) {
             <circle cx="12" cy="12" r="3"/>
             <circle cx="12" cy="12" r="1" fill={S.blue} stroke="none"/>
           </svg>
-          <span style={{ fontFamily:"'Outfit',sans-serif", fontSize:13, fontWeight:700, color:S.t1, letterSpacing:0.3 }}>
+          <span style={{ fontFamily:"'IBM Plex Sans',sans-serif", fontSize:13, fontWeight:700, color:S.t1, letterSpacing:0.3 }}>
             Vision LM
           </span>
         </div>

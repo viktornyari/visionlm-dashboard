@@ -26,7 +26,7 @@ export default function SavingsCard({ highlight }) {
     <div className="savings-grid" style={hl}>
       {/* Card 1: Savings Value */}
       <div className="glass" style={{ padding: 18 }}>
-        <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 13, fontWeight: 700, color: t1, marginBottom: 2 }}>
+        <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 13, fontWeight: 700, color: t1, marginBottom: 2 }}>
           Savings Value
         </div>
         <div style={{ fontSize: 10.5, color: t3, marginBottom: 12 }}>
@@ -35,7 +35,7 @@ export default function SavingsCard({ highlight }) {
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 6 }}>
           <span
             style={{
-              fontFamily: "'Outfit',sans-serif",
+              fontFamily: "'IBM Plex Sans',sans-serif",
               fontSize: 28,
               fontWeight: 900,
               lineHeight: 1,
@@ -86,7 +86,7 @@ export default function SavingsCard({ highlight }) {
             { v: '−12,895', l: 'Peak Idle Cost', c: AMB },
           ].map((m, i) => (
             <div key={i}>
-              <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 12, fontWeight: 700, color: m.c, lineHeight: 1, marginBottom: 2 }}>
+              <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 12, fontWeight: 700, color: m.c, lineHeight: 1, marginBottom: 2 }}>
                 {m.v}
               </div>
               <div style={{ fontSize: 8.5, color: t4, textTransform: 'uppercase', letterSpacing: 0.5 }}>{m.l}</div>

@@ -11,7 +11,7 @@ export default function OverviewCard({ highlight }) {
       <div className="glass-inner" style={{ padding: 14, marginBottom: 12 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
           <div>
-            <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1, marginBottom: 4 }}>
+            <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1, marginBottom: 4 }}>
               Operational Overview
             </div>
             <div style={{ display: 'flex', gap: 14 }}>
@@ -80,7 +80,7 @@ export default function OverviewCard({ highlight }) {
           <div>
             <div
               style={{
-                fontFamily: "'Outfit',sans-serif",
+                fontFamily: "'IBM Plex Sans',sans-serif",
                 fontSize: 32,
                 fontWeight: 800,
                 lineHeight: 1,
@@ -118,7 +118,7 @@ export default function OverviewCard({ highlight }) {
             <div style={{ fontSize: 8.5, color: t4, textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 3 }}>
               {m.l}
             </div>
-            <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 16, fontWeight: 800, color: m.c }}>{m.v}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 16, fontWeight: 800, color: m.c }}>{m.v}</div>
           </div>
         ))}
       </div>

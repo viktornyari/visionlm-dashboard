@@ -2,8 +2,18 @@ import { FACTORY_STATUS, S } from '../constants'
 
 function BigStat({ value, label, color, sub, accentClass }) {
   return (
-    <div className={`panel ${accentClass}`} style={{ flex:1, padding:'12px 14px', borderRadius:0 }}>
-      <div className="mono" style={{ fontSize:32, fontWeight:700, color, lineHeight:1, marginBottom:3 }}>{value}</div>
+    <div className={`panel ${accentClass}`} style={{ flex:1, padding:'12px 14px' }}>
+      {/* WinCC xl readout box — the hero number */}
+      <div style={{ marginBottom:6 }}>
+        <span className={`readout readout-xl`} style={{
+          color,
+          borderColor: `${color}55`,
+          boxShadow: `inset 0 1px 3px rgba(0,0,0,0.5), 0 0 0 1px ${color}22`,
+          minWidth:72,
+        }}>
+          {value}
+        </span>
+      </div>
       <div style={{ fontSize:11.5, color:S.t1, fontWeight:600, marginBottom:1 }}>{label}</div>
       <div style={{ fontSize:9.5, color:S.t3 }}>{sub}</div>
     </div>

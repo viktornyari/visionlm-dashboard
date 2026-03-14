@@ -10,7 +10,7 @@ export default function WorkersCard({ highlight }) {
     <div className="glass" style={{ padding: '14px 16px', ...hl }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 11 }}>
         <div>
-          <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1 }}>Active Workers</div>
+          <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 12.5, fontWeight: 700, color: t1 }}>Active Workers</div>
           <div style={{ fontSize: 10, color: t3, marginTop: 1 }}>
             {page * 2 + 1}–{Math.min(page * 2 + 2, WK.length)} of {WK.length} on shift
           </div>
@@ -79,7 +79,7 @@ export default function WorkersCard({ highlight }) {
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 5 }}>
               <span style={{ fontSize: 9, color: t4, textTransform: 'uppercase', letterSpacing: 0.5 }}>Productivity</span>
-              <span style={{ fontFamily: "'Outfit',sans-serif", fontSize: 13, fontWeight: 800, color: w.col }}>{w.pct}%</span>
+              <span style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: 13, fontWeight: 800, color: w.col }}>{w.pct}%</span>
             </div>
             <div style={{ height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
               <div

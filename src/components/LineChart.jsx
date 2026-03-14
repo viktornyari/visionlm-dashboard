@@ -64,14 +64,14 @@ export default function LineChart({ mode = 'total' }) {
         x: {
           grid: { color: 'rgba(255,255,255,0.035)' },
           border: { display: false },
-          ticks: { color: t3, font: { size: 10, family: "'DM Sans',sans-serif" }, maxRotation: 0 },
+          ticks: { color: t3, font: { size: 10, family: "'IBM Plex Sans',sans-serif" }, maxRotation: 0 },
         },
         y: {
           grid: { color: 'rgba(255,255,255,0.035)' },
           border: { display: false },
           ticks: {
             color: t3,
-            font: { size: 9.5, family: "'DM Sans',sans-serif" },
+            font: { size: 9.5, family: "'IBM Plex Sans',sans-serif" },
             callback: (v) => '₣' + v + 'k',
           },
         },
